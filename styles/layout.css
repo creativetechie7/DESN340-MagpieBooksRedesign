@@ -1,0 +1,261 @@
+/* Alignment and Centering Styles */
+
+/* ------------- TEXT ALIGNMENT ------------- */
+.textCenter {
+  text-align: center;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.textLeft {
+  text-align: left;
+}
+
+.container {
+  width: 88%;
+  max-width: 1400px;
+  display: block;
+  margin: 0 auto /* top and bottom | left and right */;
+}
+
+/* Rows */
+.row {
+  display: flex; /* enables side by side columns */
+  flex-wrap: wrap; /* allows wrapping to next line if too wide */
+  align-content: stretch; /* stretch to fill height of row */
+  margin: 0px -20px; /* top and bottom | left and right */
+}
+
+.rowJustifyStart {
+  justify-content: flex-start; /* aligns columns to left side of row */
+}
+
+.rowJustifyEnd {
+  justify-content: flex-end; /* aligns columns to right side of row */
+}
+
+.rowJustifyCenter {
+  justify-content: center; /* centers columns horizontally in row */
+}
+
+.rowJustifyBetween {
+  justify-content: space-between; /* spaces columns evenly in row */
+}
+
+.rowAlignStart {
+  align-content: flex-start; /* aligns columns to top of row */
+}
+
+.rowAlignEnd {
+  align-items: flex-end; /* aligns columns to bottom of row */
+}
+
+.rowAlignCenter {
+  align-items: center; /* centers columns vertically in row */
+}
+
+/* Columns */
+.column {
+  flex-grow: 1; /* allows columns to grow and fill row */
+  flex-shrink: 1; /* allows columns to shrink if needed */
+  flex-basis: 0%; /* allows columns to start at 0 width */
+  padding: 0px 20px; /* top and bottom | left and right */
+  box-sizing: border-box; /* includes padding in width calculation */
+}
+
+/* Large Screen Columns */
+.columnLg1 {
+  flex: 0 0 8.33%;
+  max-width: 8.33%;
+}
+
+.columnLg2 {
+  flex: 0 0 16.67%;
+  max-width: 16.67%;
+}
+
+.columnLg3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.columnLg4 {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+}
+
+.columnLg5 {
+  flex: 0 0 41.67%;
+  max-width: 41.67%;
+}
+
+.columnLg6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.columnLg7 {
+  flex: 0 0 58.33%;
+  max-width: 58.33%;
+}
+
+.columnLg8 {
+  flex: 0 0 66.67%;
+  max-width: 66.67%;
+}
+
+.columnLg9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+.columnLg10 {
+  flex: 0 0 83.33%;
+  max-width: 83.33%;
+}
+
+.columnLg11 {
+  flex: 0 0 91.67%;
+  max-width: 91.67%;
+}
+
+.columnLg12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* Medium Screen Media Query */
+@media screen and (max-width: 759px){
+   .columnMd12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    }
+   .columnMd11 {
+    flex: 0 0 91.67%;
+    max-width: 91.67%;
+}
+    .columnMd10 {
+     flex: 0 0 83.33%;
+     max-width: 83.33%;
+    }
+    .columnMd9 {
+     flex: 0 0 75%;
+     max-width: 75%;
+    }
+    .columnMd8 {
+     flex: 0 0 66.67%;
+     max-width: 66.67%;
+    }
+    .columnMd7 {
+     flex: 0 0 58.33%;
+     max-width: 58.33%;
+    }
+    .columnMd6 {
+     flex: 0 0 50%;
+     max-width: 50%;
+    }
+    .columnMd5 {
+     flex: 0 0 41.67%;
+     max-width: 41.67%;
+    }
+    .columnMd4 {
+     flex: 0 0 33.33%;
+     max-width: 33.33%;
+    }
+    .columnMd3 {
+     flex: 0 0 25%;
+     max-width: 25%;
+    }
+    .columnMd2 {
+     flex: 0 0 16.67%;
+     max-width: 16.67%;
+    }
+    .columnMd1 {
+     flex: 0 0 8.33%;
+     max-width: 8.33%;
+    }
+}
+/* Medium Screen Media Query */
+
+/* Small Screen Media Query */
+@media screen and (max-width: 478px) {
+  .columnSm12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .columnSm11 {
+    flex: 0 0 91.67%;
+    max-width: 91.67%;
+  }
+
+  .columnSm10 {
+    flex: 0 0 83.33%;
+    max-width: 83.33%;
+  }
+
+  .columnSm9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+
+  .columnSm8 {
+    flex: 0 0 66.67%;
+    max-width: 66.67%;
+  }
+
+  .columnSm7 {
+    flex: 0 0 58.33%;
+    max-width: 58.33%;
+  }
+
+  .columnSm6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .columnSm5 {
+    flex: 0 0 41.67%;
+    max-width: 41.67%;
+  }
+
+  .columnSm4 {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+  }
+
+  .columnSm3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .columnSm2 {
+    flex: 0 0 16.67%;
+    max-width: 16.67%;
+  }
+
+  .columnSm1 {
+    flex: 0 0 8.33%;
+    max-width: 8.33%;
+  }
+} /* Small Screen Media ends */
+
+/* ------------- POSITIONING ------------- */
+.positionRelative {
+  position: relative;
+}
+
+.positionAbsolute {
+  position: absolute;
+}
+
+.positionFixed {
+  position: fixed;
+}
+
+.positionSticky {
+  position: sticky;
+  top: 0; /* required for sticky positioning */
+}
