@@ -1,0 +1,447 @@
+/* ------------- CSS Custom Properties ------------- */
+:root {
+    /* Colors */
+    --color-primary: #2D4E2F;
+    --color-primary-dark: #1f3621;
+    --color-secondary: #D2A751;
+    --color-secondary-dark: #b88f44;
+    --color-navy: #01172F;
+    --color-bg-light: #D8E9D9;
+    --color-bg-dark: #676767;
+    --color-bg-page: #f5f1ed;
+    --color-text: #000000;
+    --color-text-muted: #666;
+    --color-white: #ffffff;
+    --color-danger: #d32f2f;
+    --color-danger-dark: #b71c1c;
+
+    /* Fonts */
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Atkinson Hyperlegible', sans-serif;
+
+    /* Font Sizes */
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-xs: 12px;
+    --font-size-h1: 36px;
+    --font-size-h2: 32px;
+    --font-size-h3: 24px;
+    --font-size-h4: 20px;
+
+    /* Line Heights */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+
+    /* Common Values */
+    --border-radius-sm: 2px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 10px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition-ease: 0.2s ease;
+}
+
+/* ------------- Global Styles ------------- */
+/* Base typography - inherited by all elements */
+main {background-color: var(--color-bg-page);}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    color: var(--color-text);
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-tight);
+}
+
+p {
+    margin: 16px 0 40px 0; /* Top, Right, Bottom, Left Margin */
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ------------- Navigation Bar ------------- */
+header {
+    background-color: var(--color-bg-light);
+    width: 100%;
+    height: 180px;
+}
+
+/* Top row of the header - logo, search, and icons */
+.headerTop {
+    background-color: var(--color-bg-light);
+    height: 123px;
+    display: flex;
+    align-items: center;
+    padding: 0 48px; /* Left and Right Padding */
+    position: relative;
+}
+
+/* Logo styling */
+.logo {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    left: 0;
+    top: -75px;
+}
+
+/* Search bar container */
+.searchBar {
+    position: absolute; /* Relative to headerTop */
+    left: 283px;
+    top: 34px;
+    width: 403px;
+    height: 68px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-text);
+    display: flex;
+    align-items: center;
+    padding: 0 16px; /* Left and Right Padding */
+    gap: 10px;
+}
+
+.searchBar input {
+    border: none;
+    outline: none;
+    flex: 1;
+    background: transparent;
+    z-index: 2;
+}
+
+.searchBar input::placeholder {
+    color: var(--color-text);
+}
+
+/* Button style - shared by multiple buttons */
+.searchBar button,
+.shoppingAccountActions button,
+.carouselArrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchBar button {
+    z-index: 2;
+}
+
+.searchBar button i {
+    font-size: 24px;
+    color: var(--color-text);
+}
+
+/* Search dropdown */
+.searchDropdown {
+    display: none;
+    position: absolute; /* Relative to headerTop */
+    top: 70px;
+    left: 10px;
+    width: 403px;
+    max-height: 300px;
+    overflow-y: auto; /* Hides scrollbar if not needed */
+    background-color: var(--color-white);
+    border: 1px solid var(--color-text);
+    border-top: none;
+    box-shadow: var(--box-shadow);
+    z-index: 3; /* Ensure it appears above other elements in the header */
+}
+
+.searchDropdown.show {
+    display: block;
+}
+
+.searchDropdownItem {
+    padding: 12px 16px; /* Top and Bottom | Left and Right */
+    cursor: pointer;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color var(--transition-ease);
+}
+
+.searchDropdownItem:hover {
+    background-color: #f5f5f5;
+}
+
+/* Remove border from last item */
+.searchDropdownItem:last-child {
+    border-bottom: none;
+}
+
+.searchDropdownItem .bookTitleResult {
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+}
+
+.searchDropdownItem .bookAuthorResult {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+.noResults {
+    padding: 12px 16px; /* Top and Bottom | Left and Right */
+    color: var(--color-text-muted);
+    text-align: center;
+}
+
+/* Shopping and account icons */
+.shoppingAccountActions {
+    position: absolute; /* Relative to headerTop */
+    right: 48px;
+    top: 37px;
+    display: flex;
+    gap: 13px;
+}
+
+.shoppingAccountActions button {
+    position: relative;
+}
+
+.shoppingAccountActions button i {
+    font-size: 40px;
+    color: var(--color-text);
+}
+
+/* Cart Badge */
+.cartBadge {
+    position: absolute; /* Relative to shoppingAccountActions button */
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the badge */
+    background-color: var(--color-danger);
+    color: var(--color-white);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+/* Navigation bar - bottom row */
+.navBar {
+    background-color: var(--color-bg-light);
+    height: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navMenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 41px;
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically center items */
+}
+
+.navMenu li {
+    margin: 0;
+}
+
+.navLink {
+    color: var(--color-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.navLink:hover {
+    text-decoration: underline;
+}
+
+.navLink i {
+    font-size: 24px;
+}
+
+/* ------------- End of Navigation Bar ------------- */
+
+/* ------------- Dropdown Menu ------------- */
+.dropdown {
+    position: relative;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    left: -50%;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    flex-direction: column;
+}
+
+.dropdownContent a {
+    color: var(--color-text);
+    padding: 12px 16px; /* Top and Bottom | Left and Right */
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownContent a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+/* ------------- End of Dropdown Menu ------------- */
+
+/* ------------- Main Content Styles ------------- */
+.birdOnlyLogo {
+    max-width: 200px;
+    height: auto;
+}
+
+.mainContentHeadings {
+    color: var(--color-primary);
+}
+
+.eventCard{
+    display: flex;
+    flex-direction: column; /* text and image stacked */
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+
+.eventCard img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow);
+}
+
+.eventText {
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.upcomingEventsContainer{
+    display: flex;
+    gap: 2em;
+    margin-bottom: 25px;
+}
+
+.carouselWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bookCardCarousel {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    margin-bottom: 1em;
+}
+
+.bookCardsContainer {
+    display: flex;
+    gap: 24px;
+}
+
+.bookCard {
+    background: var(--color-primary);
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    flex-shrink: 0;
+    width: 130px;
+    height: 255px;
+    padding: 1em 0.5em;
+}
+/* If not datasection 1 then don't show at first */
+.bookCard[data-section]:not([data-section="1"]) {
+    display: none;
+}
+
+.bookImageContainer {
+    margin: 0 auto 4px auto; /* Top, Right, Bottom, Left Margin */
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--color-white);
+    width: 120px;
+    height: 160px;
+}
+
+.bookImageContainer img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin: 4px 0; /* Top and Bottom Margin */
+}
+
+.bookInfo {
+    color: var(--color-white);
+    margin: 0 0 8px 0; /* Top, Right, Bottom, Left Margin */
+    text-align: left;
+}
+
+.carouselDots{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.carouselDot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-bg-dark);
+    cursor: pointer;
+}
+.carouselDot.active{
+    background-color: var(--color-primary);
+}
+
+.viewProductsLink {
+    text-align: right;
+    margin: 0 85px 0 0; /* Top, Right, Bottom, Left Margin */
+}
+
+.viewProductsLink a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.viewProductsLink a:hover {
+    text-decoration: underline;
+}
+
+.viewProductsLink a:visited {
+    color: var(--color-primary);
+}
+
+
+
+
+/* ------------- End of Main Content Styles ------------- */
+
+
+/* ------------- Individual Styles ------------- */
+.hbar {
+    border: 8px solid var(--color-secondary)
+}
