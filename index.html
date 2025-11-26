@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        Magpie Books
+    </title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="styles/layout.css" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+    <link rel="manifest" href="images/site.webmanifest" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" />
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="headerTop">
+            <a href="index.html">
+                <!-- <img class="logo" src="images/magpie-logo.png" alt="Magpie Books Logo"  style="filter: blur(5px);"/> -->
+                <img class="logo" src="images/magpie-logo.png" alt="Magpie Books Logo" />
+            </a>
+            <!-- Search Bar -->
+            <div class="searchBar">
+                <input type="text" id="searchInput" placeholder="Search by title, author, subject, publisher, or ISBN"
+                    autocomplete="off" />
+                <button type="submit"><i class="iconoir-search"></i></button>
+                <div id="searchDropdown" class="searchDropdown"></div>
+            </div>
+            <!-- Icons for Shopping Cart and Account -->
+            <div class="shoppingAccountActions">
+                <button><i class="iconoir-user-circle"></i></button>
+                <button><i class="iconoir-shopping-bag"></i></button>
+            </div>
+        </div>
+        <!-- Navigation Bar -->
+        <nav class="navBar">
+            <ul class="navMenu">
+                <div class="dropdown">
+                    <li><a href="#" class="navLink ">Browse <i class="iconoir-arrow-down-tag"></i></a></li>
+                    <div class="dropdownContent">
+                        <a href="staff_picks.html">Staff Picks</a>
+                        <a href="#">Young Readers</a>
+                    </div>
+                </div>
+                <li><a href="#" class="navLink">Events</a></li>
+                <li><a href="#" class="navLink">Book Club</a></li>
+                <div class="dropdown">
+                    <li><a href="#" class="navLink">About <i class="iconoir-arrow-down-tag"></i></a></li>
+                    <div class="dropdownContent">
+                        <a href="#">Local Author Info</a>
+                        <a href="accessibility.html">Accessibility</a>
+                        <a href="faq.html">FAQ</a>
+                        <a href="#">Ordering</a>
+                        <a href="#">Shipping and Delivery</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+                <li><a href="#" class="navLink">Merch</a></li>
+                <!-- This is temporary for navigation-->
+                <li><a href="book_Addie_LaRue_information.html" class="navLink">Addie LaRue</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Bird Logo Container -->
+        <div class="container textCenter" style="padding: 1em 0;">
+            <!-- Row -->
+            <div class="row">
+                <!-- Column -->
+                <div class="column columnLg12 columnMd12 columnSm12">
+                    <img class="birdOnlyLogo" src="images/magpie-logo-bird-only.png" alt="Magpie Books Bird Logo" />
+                </div>
+            </div>
+        </div>
+        <!-- Upcoming Events Section -->
+        <section>
+            <div class="container">
+                <h1 class="textCenter mainContentHeadings">Upcoming Events</h1>
+                <div class="row rowJustifyCenter">
+                    <div class="columnLg6 columnMd6 columnSm4">
+                        <div class="upcomingEventsContainer">
+                            <!-- Event 1 -->
+                            <div class="eventCard">
+                                <img src="images/event-new-romantics.png" alt="New Romantics Book Club Event" />
+                                <p class="eventText">Oct 22rd</p>
+                                <p class="eventText">New Romantics:<br> Ladies in Hating</p>
+                            </div>
+
+                            <div class="eventCard">
+                                <img src="images/event-crafts-book-club.png" alt="Crafts Book Club Event" />
+                                <p class="eventText">Oct 23rd</p>
+                                <p class="eventText">Crafts Book Club:<br> Crafting for Sinners</p>
+                            </div>
+                            <div class="eventCard">
+                                <img src="images/event-november-book-club.png" alt="November Book Club Event" />
+                                <p class="eventText">Nov 5th</p>
+                                <p class="eventText">November Book Club:<br> The Quiet Damage</p>
+                            </div>
+                            <div class="eventCard">
+                                <img src="images/event-naloxone-training.png" alt="Naloxone Training Event" />
+                                <p class="eventText">Oct 23rd</p>
+                                <p class="eventText">Naloxone Training with 4B Harm Reduction</p>
+                            </div>
+                        </div>
+                        <!-- End of upcomingEventsContainer -->
+                    </div>
+                    <!-- End of column -->
+                </div>
+                <!-- End of row -->
+            </div>
+            <!-- End of container -->
+        </section>
+
+        <!-- New In Store Section -->
+        <section id="newInStore" class="newInStore">
+            <!--NOTE: id and class both needed for JavaScript functionality -->
+            <div class="container">
+                <div class="row">
+                    <div class="column columnLg12 columnMd12 columnSm12">
+                        <h1 class="textCenter mainContentHeadings">New In Store</h1>
+                        <!-- Wrapper for Carousel -->
+                        <div class="carouselWrapper">
+                            <!-- Arrows and Books -->
+                            <div class="bookCardCarousel">
+                                <button class="carouselArrow" disabled><i
+                                        class="iconoir-arrow-left-circle"></i></button>
+
+                                <!-- Book Container for all books in a section -->
+                                <div class="bookCardsContainer">
+                                    <!-- Book 1 Section 1 -->
+                                    <div class="bookCard" data-section="1">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/new-in-store/book-always-remember-charlie-mackesy.jpeg"
+                                                alt="Always Remember by Charlie Mackesy Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Always Remember</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Charlie Mackesy</p>
+                                    </div>
+                                    <!-- Book 2 Section 1-->
+                                    <div class="bookCard" data-section="1">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/new-in-store/book-bread-of-angels-patti-smith.jpeg"
+                                                alt="Bread of Angels by Patti Smith Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Bread of Angels</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Patti Smith</p>
+                                    </div>
+                                    <!-- Book 3 Section 1-->
+                                    <div class="bookCard" data-section="1">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/new-in-store/book-broken-x-fang.jpeg"
+                                                alt="Broken by X Fang Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Broken</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">X Fang</p>
+                                    </div>
+                                    <!-- Book 4 Section 1-->
+                                    <div class="bookCard" data-section="1">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/new-in-store/book-elbows-up-elamin-abdelmahmoud.jpeg"
+                                                alt="Elbows Up by Elamin Abdelmahmoud Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Elbows Up</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Elamin Abdelmahmoud
+                                        </p>
+                                    </div>
+                                    <!-- Book 5 Section 1-->
+                                    <div class="bookCard" data-section="1">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/new-in-store/book-lady-ferry-sarah-orne-jewett.jpeg"
+                                                alt="Lady Ferry by Sarah Orne Jewett Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Lady Ferry</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Sarah Orne Jewett
+                                        </p>
+                                    </div>
+                                    <!-- Book 1 Section 2-->
+                                    <div class="bookCard" data-section="2">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/new-in-store/book-let-me-go-mad-in-my-own-way-elaine-feeney.jpeg"
+                                                alt="Let Me Go Mad in My Own Way by Elaine Feeney Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Let Me Go Mad in My Own Way</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Elaine Feeney</p>
+                                    </div>
+                                    <!-- Book 2 Section 2-->
+                                    <div class="bookCard" data-section="2">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/new-in-store/book-mate-ali-hazelwood.jpeg"
+                                                alt="Mate by Ali Hazelwood Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Mate</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Ali Hazelwood</p>
+                                    </div>
+                                    <!-- Book 3 Section 2-->
+                                    <div class="bookCard" data-section="2">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/new-in-store/book-palaver-bryan-washington.jpeg"
+                                                alt="Palaver by Bryan Washington Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Palaver</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Bryan Washington</p>
+                                    </div>
+                                    <!-- Book 4 Section 2-->
+                                    <div class="bookCard" data-section="2">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/new-in-store/book-the-god-of-the-woods-liz-moore.jpeg"
+                                                alt="The God of the Woods by Liz Moore Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            The God of the Woods</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Liz Moore</p>
+                                    </div>
+                                    <!-- Book 5 Section 2-->
+                                    <div class="bookCard" data-section="2">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/new-in-store/book-the-mistress-in-black-rosemary-timperley.jpeg"
+                                                alt="The Mistress in Black by Rosemary Timperley Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            The Mistress in Black</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Rosemary Timperley
+                                        </p>
+                                    </div>
+                                    <!-- Book 1 Section 3-->
+                                    <div class="bookCard" data-section="3">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/new-in-store/book-the-world-after-rain-canisia-lubrin.jpeg"
+                                                alt="The World After Rain by Canisia Lubrin Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            The World After Rain</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Canisia Lubrin</p>
+                                    </div>
+                                    <!-- Book 2 Section 3-->
+                                    <div class="bookCard" data-section="3">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/new-in-store/book-things-that-disappear-jenny-erpenbeck.jpeg"
+                                                alt="Things That Disappear by Jenny Erpenbeck Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Things That Disappear</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Jenny Erpenbeck</p>
+                                    </div>
+                                    <!-- Book 3 Section 3-->
+                                    <div class="bookCard" data-section="3">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/new-in-store/book-ursula-k-le-guins-book-of-cats-ursula-k-le-guin.jpeg"
+                                                alt="Ursula K. Le Guin's Book of Cats by Ursula K. Le Guin Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Ursula K. Le Guin's Book of Cats</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Ursula K. Le Guin
+                                        </p>
+                                    </div>
+                                    <!-- Book 4 Section 3-->
+                                    <div class="bookCard" data-section="3">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/new-in-store/book-vanished-beyond-the-map-adam-shoalts.jpeg"
+                                                alt="Vanished Beyond the Map by Adam Shoalts Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Vanished Beyond the Map</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Adam Shoalts</p>
+                                    </div>
+                                    <!-- Book 5 Section 3-->
+                                    <div class="bookCard" data-section="3">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/new-in-store/book-voices-of-resistance-batool-abu-akleen.jpeg"
+                                                alt="Voices of Resistance by Batool Abu Akleen Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Voices of Resistance</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Batool Abu Akleen
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="carouselArrow">
+                                    <i class="iconoir-arrow-right-circle"></i>
+                                </button>
+                            </div>
+                            <div style="width:100%">
+                                <div class="carouselDots">
+                                    <span class="carouselDot active" data-section="1"></span>
+                                    <span class="carouselDot" data-section="2"></span>
+                                    <span class="carouselDot" data-section="3"></span>
+                                </div>
+                                <div class="viewProductsLink">
+                                    <a href="#newInStore">View all products</a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="hbar" />
+                        <!-- End of carouselWrapper -->
+                    </div>
+                    <!-- End of column -->
+                </div>
+                <!-- End of row -->
+            </div>
+            <!-- End of container -->
+        </section>
+
+        <!-- Fall Releases Section -->
+        <section id="fallReleases" class="fallReleases">
+            <!--NOTE: id and class both needed for JavaScript functionality -->
+            <div class="container">
+                <div class="row">
+                    <div class="column columnLg12 columnMd12 columnSm12">
+                        <h1 class="textCenter mainContentHeadings">Fall Releases</h1>
+                        <!-- Wrapper for Carousel -->
+                        <div class="carouselWrapper">
+                            <!-- Arrows and Books -->
+                            <div class="bookCardCarousel">
+                                <button class="carouselArrow" disabled><i
+                                        class="iconoir-arrow-left-circle"></i></button>
+
+                                <!-- Book Container for all books in a section -->
+                                <div class="bookCardsContainer">
+                                    <!-- Book 1 Section 1 -->
+                                    <div class="bookCard" data-section="1">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-a-truce-that-is-not-peace-miriam-toews.jpeg"
+                                                alt="A Truce That Is Not Peace by Miriam Toews Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            A Truce That Is Not Peace</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Miriam Toews</p>
+                                    </div>
+                                    <!-- Book 2 Section 1-->
+                                    <div class="bookCard" data-section="1">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-big-kiss-bye-bye-claire-louise-bennett.jpeg"
+                                                alt="Big Kiss Bye Bye by Claire Louise Bennett Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Big Kiss Bye Bye</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Claire Louise Bennett</p>
+                                    </div>
+                                    <!-- Book 3 Section 1-->
+                                    <div class="bookCard" data-section="1">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-driver-mattia-filice.jpeg"
+                                                alt="Driver by Mattia Filice Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Driver</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Mattia Filice</p>
+                                    </div>
+                                    <!-- Book 4 Section 1-->
+                                    <div class="bookCard" data-section="1">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-minor-black-figures-brandon-taylor.jpeg"
+                                                alt="Minor Black Figures by Brandon Taylor Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Minor Black Figures</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Brandon Taylor</p>
+                                        </p>
+                                    </div>
+                                    <!-- Book 5 Section 1-->
+                                    <div class="bookCard" data-section="1">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-nova-scotia-house-charlie-porter.jpeg"
+                                                alt="Nova Scotia House by Charlie Porter Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Nova Scotia House</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Charlie Porter
+                                        </p>
+                                    </div>
+                                    <!-- Book 1 Section 2-->
+                                    <div class="bookCard" data-section="2">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-orlanda-jacqueline-harpman.jpeg"
+                                                alt="Orlanda by Jacqueline Harpman Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Orlanda</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Jacqueline Harpman</p>
+                                    </div>
+                                    <!-- Book 2 Section 2-->
+                                    <div class="bookCard" data-section="2">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-procession-katherena-vermette.jpeg"
+                                                alt="procession by katherena vermette Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            procession</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">katherena vermette</p>
+                                    </div>
+                                    <!-- Book 3 Section 2-->
+                                    <div class="bookCard" data-section="2">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-sea-now-eva-meijer.jpeg"
+                                                alt="Sea Now by Eva Meijer Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Sea Now</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Eva Meijer</p>
+                                    </div>
+                                    <!-- Book 4 Section 2-->
+                                    <div class="bookCard" data-section="2">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-the-slicks-maggie-nelson.jpeg"
+                                                alt="The Slicks by Maggie Nelson Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            The Slicks</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Maggie Nelson</p>
+                                    </div>
+                                    <!-- Book 5 Section 2-->
+                                    <div class="bookCard" data-section="2">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-the-trial-of-katterfelto-michael-redhill.jpeg"
+                                                alt="The Trial of Katterfelto by Michael Redhill Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            The Trial of Katterfelto</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Michael Redhill</p>
+                                    </div>
+                                    <!-- Book 1 Section 3-->
+                                    <div class="bookCard" data-section="3">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-the-unveiling-quan-barry.jpeg"
+                                                alt="The Unveiling by Quan Barry Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            The Unveiling</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Quan Barry</p>
+                                    </div>
+                                    <!-- Book 2 Section 3-->
+                                    <div class="bookCard" data-section="3">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-thin-places-kay-chronister.jpeg"
+                                                alt="Thin Places by Kay Chronister Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Thin Places</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Kay Chronister</p>
+                                    </div>
+                                    <!-- Book 3 Section 3-->
+                                    <div class="bookCard" data-section="3">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-three-or-more-is-a-riot-jelani-cobb.jpeg"
+                                                alt="Three or More is a Riot by Jelani Cobb Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Three or More is a Riot</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Jelani Cobb</p>
+                                        </p>
+                                    </div>
+                                    <!-- Book 4 Section 3-->
+                                    <div class="bookCard" data-section="3">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-will-there-ever-be-another-you-patricia-lockwood.jpeg"
+                                                alt="Will There Ever Be Another You by Patricia Lockwood Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Will There Ever Be Another You</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Patricia Lockwood</p>
+                                    </div>
+                                    <!-- Book 5 Section 3-->
+                                    <div class="bookCard" data-section="3">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-wolf-moon-dog-thomas-wharton.jpeg"
+                                                alt="Wolf Moon Dog by Thomas Wharton Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Wolf Moon Dog</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Thomas Wharton</p>
+                                    </div>
+                                </div>
+                                <button class="carouselArrow">
+                                    <i class="iconoir-arrow-right-circle"></i>
+                                </button>
+                            </div>
+                            <div style="width:100%">
+                                <div class="carouselDots">
+                                    <span class="carouselDot active" data-section="1"></span>
+                                    <span class="carouselDot" data-section="2"></span>
+                                    <span class="carouselDot" data-section="3"></span>
+                                </div>
+                                <div class="viewProductsLink">
+                                    <a href="#newInStore">View all products</a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="hbar" />
+                        <!-- End of carouselWrapper -->
+                    </div>
+                    <!-- End of column -->
+                </div>
+                <!-- End of row -->
+            </div>
+            <!-- End of container -->
+        </section>
+
+        <!-- Coming Soon Section -->
+        <section id="comingSoon" class="comingSoon">
+            <!--NOTE: id and class both needed for JavaScript functionality -->
+            <div class="container">
+                <div class="row">
+                    <div class="column columnLg12 columnMd12 columnSm12">
+                        <h1 class="textCenter mainContentHeadings">Coming Soon</h1>
+                        <!-- Wrapper for Carousel -->
+                        <div class="carouselWrapper">
+                            <!-- Arrows and Books -->
+                            <div class="bookCardCarousel">
+                                <button class="carouselArrow" disabled><i
+                                        class="iconoir-arrow-left-circle"></i></button>
+
+                                <!-- Book Container for all books in a section -->
+                                <div class="bookCardsContainer">
+                                    <!-- Book 1 Section 1 -->
+                                    <div class="bookCard" data-section="1">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/coming-soon/book-agnes-auberts-mystical-cat-shelter-heather-fawcett.jpeg"
+                                                alt="Agnes Aubert's Mystical Cat Shelter by Heather Fawcett Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Agnes Aubert's Mystical Cat Shelter</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Heather Fawcett</p>
+                                    </div>
+                                    <!-- Book 2 Section 1-->
+                                    <div class="bookCard" data-section="1">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/coming-soon/book-brigands-and-breadknives-travis-baldree.jpeg"
+                                                alt="Brigands and Breadknives by Travis Baldree Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Brigands and Breadknives</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Travis Baldree</p>
+                                    </div>
+                                    <!-- Book 3 Section 1-->
+                                    <div class="bookCard" data-section="1">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/coming-soon/book-crux-gabriel-tallent.jpeg"
+                                                alt="Driver by Mattia Filice Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Driver</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Mattia Filice</p>
+                                    </div>
+                                    <!-- Book 4 Section 1-->
+                                    <div class="bookCard" data-section="1">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/coming-soon/book-house-of-day-house-of-night-olga-tokarczuk.jpeg"
+                                                alt="House of Day, House of Night by Olga Tokarczuk Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            House of Day, House of Night</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Olga Tokarczuk</p>
+                                    </div>
+                                    <!-- Book 5 Section 1-->
+                                    <div class="bookCard" data-section="1">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/coming-soon/book-i-medusa-ayana-gray.jpeg"
+                                                alt="I, Medusa by Ayana Gray Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            I, Medusa</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Ayana Gray
+                                    </div>
+                                    <!-- Book 1 Section 2-->
+                                    <div class="bookCard" data-section="2">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/coming-soon/book-is-this-a-cry-for-help-emily-austin.jpeg"
+                                                alt="Is This a Cry for Help by Emily Austin Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Is This a Cry for Help</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Emily Austin</p>
+                                    </div>
+                                    <!-- Book 2 Section 2-->
+                                    <div class="bookCard" data-section="2">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-procession-katherena-vermette.jpeg"
+                                                alt="procession by katherena vermette Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            procession</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">katherena vermette</p>
+                                    </div>
+                                    <!-- Book 3 Section 2-->
+                                    <div class="bookCard" data-section="2">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-sea-now-eva-meijer.jpeg"
+                                                alt="Sea Now by Eva Meijer Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Sea Now</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Eva Meijer</p>
+                                    </div>
+                                    <!-- Book 4 Section 2-->
+                                    <div class="bookCard" data-section="2">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-the-slicks-maggie-nelson.jpeg"
+                                                alt="The Slicks by Maggie Nelson Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            The Slicks</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Maggie Nelson</p>
+                                    </div>
+                                    <!-- Book 5 Section 2-->
+                                    <div class="bookCard" data-section="2">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-the-trial-of-katterfelto-michael-redhill.jpeg"
+                                                alt="The Trial of Katterfelto by Michael Redhill Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            The Trial of Katterfelto</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Michael Redhill</p>
+                                    </div>
+                                    <!-- Book 1 Section 3-->
+                                    <div class="bookCard" data-section="3">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-the-unveiling-quan-barry.jpeg"
+                                                alt="The Unveiling by Quan Barry Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            The Unveiling</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Quan Barry</p>
+                                    </div>
+                                    <!-- Book 2 Section 3-->
+                                    <div class="bookCard" data-section="3">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-thin-places-kay-chronister.jpeg"
+                                                alt="Thin Places by Kay Chronister Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Thin Places</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Kay Chronister</p>
+                                    </div>
+                                    <!-- Book 3 Section 3-->
+                                    <div class="bookCard" data-section="3">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-three-or-more-is-a-riot-jelani-cobb.jpeg"
+                                                alt="Three or More is a Riot by Jelani Cobb Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Three or More is a Riot</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Jelani Cobb</p>
+                                        </p>
+                                    </div>
+                                    <!-- Book 4 Section 3-->
+                                    <div class="bookCard" data-section="3">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-will-there-ever-be-another-you-patricia-lockwood.jpeg"
+                                                alt="Will There Ever Be Another You by Patricia Lockwood Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Will There Ever Be Another You</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Patricia Lockwood</p>
+                                    </div>
+                                    <!-- Book 5 Section 3-->
+                                    <div class="bookCard" data-section="3">
+                                        <!-- Background Container for Book Image -->
+                                        <div class="bookImageContainer">
+                                            <img src="images/fall-releases/book-wolf-moon-dog-thomas-wharton.jpeg"
+                                                alt="Wolf Moon Dog by Thomas Wharton Book Cover" />
+                                        </div>
+                                        <p class="bookInfo" style="font-weight: 700; font-size: var(--font-size-base);">
+                                            Wolf Moon Dog</p>
+                                        <p class="bookInfo" style="font-size: var(--font-size-sm);">Thomas Wharton</p>
+                                    </div>
+                                </div>
+                                <button class="carouselArrow">
+                                    <i class="iconoir-arrow-right-circle"></i>
+                                </button>
+                            </div>
+                            <div style="width:100%">
+                                <div class="carouselDots">
+                                    <span class="carouselDot active" data-section="1"></span>
+                                    <span class="carouselDot" data-section="2"></span>
+                                    <span class="carouselDot" data-section="3"></span>
+                                </div>
+                                <div class="viewProductsLink">
+                                    <a href="#newInStore">View all products</a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="hbar" />
+                        <!-- End of carouselWrapper -->
+                    </div>
+                    <!-- End of column -->
+                </div>
+                <!-- End of row -->
+            </div>
+            <!-- End of container -->
+        </section>
+
+
+
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="scripts/search.js"></script>
+    <script src="scripts/carousel.js"></script>
+
+</body>
+
+</html>
