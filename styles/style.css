@@ -42,7 +42,11 @@
 
 /* ------------- Global Styles ------------- */
 /* Base typography - inherited by all elements */
-main {background-color: var(--color-bg-page);}
+main {
+    background-color: var(--color-bg-page);
+    padding: 48px 0; /* Top and Bottom Padding */
+    min-height: 100vh; /* Ensure main takes full viewport height */
+    }
 
 body {
     font-family: var(--font-body);
@@ -51,10 +55,30 @@ body {
     color: var(--color-text);
 }
 
-h1 {
+h1, h2, h3, h4 {
     font-family: var(--font-heading);
-    font-size: var(--font-size-h1);
     line-height: var(--line-height-tight);
+    color: var(--color-text)
+}
+
+h1 {
+    font-weight: bold;
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-weight: bold;
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-weight: bold;
+    font-size: var(--font-size-h3);
+}
+
+h4 {
+    font-weight: normal;
+    font-size: var(--font-size-h4);
 }
 
 p {
@@ -316,6 +340,7 @@ header {
 
 .mainContentHeadings {
     color: var(--color-primary);
+    text-align: center;
 }
 
 .eventCard{
@@ -352,16 +377,42 @@ header {
     align-items: center;
 }
 
-.bookCardCarousel {
+/* Carousel Grid to hold arrows and book cards */
+.carouselGrid {
+    display: grid;
+    /* Column 1: Left Arrow (auto width)
+       Column 2: Book Cards (flexible width)
+       Column 3: Right Arrow (auto width) */
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+}
+
+.bookCardsContainer {
+    grid-column: 2; /* Place in the second column of the grid */
     display: flex;
     align-items: center;
     gap: 2em;
     margin-bottom: 1em;
+    width: 100%;
 }
-
-.bookCardsContainer {
+/* Ensure book cards are displayed in a row with spacing */
+.carouselArrow:first-child {
+    grid-column: 1; /* Place in the first column of the grid */
+}
+.carouselArrow:last-child {
+    grid-column: 3; /* Place in the third column of the grid */
+}
+/* Footer of the carousel for dots and view products link */
+.carouselFooter {
+    grid-column: 2; /* Span across the book cards */
+    width: 100%;
+    /* Use flexbox to space out dots and link */
     display: flex;
-    gap: 24px;
+    justify-content: flex-end; /* Align link to the right */
+    align-items: center;
+    position: relative;
+    margin: 16px 0 0 0; /* Top, Right, Bottom, Left Margin */
 }
 
 .bookCard {
@@ -401,6 +452,9 @@ header {
 }
 
 .carouselDots{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     gap: 8px;
@@ -418,10 +472,6 @@ header {
     background-color: var(--color-primary);
 }
 
-.viewProductsLink {
-    text-align: right;
-    margin: 0 85px 0 0; /* Top, Right, Bottom, Left Margin */
-}
 
 .viewProductsLink a {
     color: var(--color-primary);
@@ -436,13 +486,215 @@ header {
     color: var(--color-primary);
 }
 
+/* ------------- Newsletter Signup Section ------------- */
+.newsletterFormContainer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+}
 
+.newsletterInputWrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: flex-start;
+}
+
+.newsletterInputWrapper input {
+    width: 183px;
+    height: 23px;
+    padding: 8px 12px;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-white);
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    outline: none;
+}
+
+.newsletterInputWrapper input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.newsletterInputWrapper input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(45, 78, 47, 0.1);
+}
+
+.visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden; /* Hide the element visually */
+    clip: rect(0, 0, 0, 0); /* Clip the element to hide it */
+    white-space: nowrap; /* Prevents the text from wrapping */
+    border: 0;
+}
 
 
 /* ------------- End of Main Content Styles ------------- */
 
+/* ------------- Button Styles ------------- */
+.newsletterButton,
+.externalPageButton,
+.addToCartButton {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--transition-ease);
+}
+
+.newsletterButton {
+    padding: 8px 16px;
+    border-radius: 20px;
+    height: 40px;
+}
+
+.newsletterButton:hover,
+.quantityButton:hover,
+.addToCartButton:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.mapHoursButton,
+.externalPageButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-secondary);
+    color: var(--color-navy);
+    padding: 3px 8px;
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.mapHoursButton:hover,
+.externalPageButton:hover {
+    background-color: var(--color-secondary-dark);
+}
+
+.mapHoursButton {
+    width: fit-content;
+    gap: 3px;
+}
+
+.mapHoursButton i {
+    font-size: 24px;
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    margin-right: -5px;
+    width: 24px;
+    height: 24px;
+}
+
+.externalPageButton {
+    width: 100%;
+    min-height: 40px;
+    margin: 32px;
+    text-align: center;
+}
+
+
+.addToCartButton {}
+
+.quantityButton {}
+
+.faqButton {} /* Actually needed? */
+
+
+/* ------------- Footer Styles ------------- */
+footer {
+    background-color: var(--color-navy);
+    padding: 29px 0;
+    position: relative;
+}
+
+footer img {
+    height: 116px;
+    width: 116px;
+    object-fit: contain;
+}
+
+footer p:first-child {
+    margin-bottom: 10px;
+}
+
+.footerText{
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+footer .listNoBullets li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+footer .listNoBullets i {
+    font-size: var(--font-size-sm);
+    color: var(--color-white);
+}
+
+.footerSocialIcons {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 100px;
+}
+
+.socialIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.socialIcon i {
+    font-size: 24px;
+}
+
+/* ------------- Footer Navigation Links ------------- */
+.footerNavLinks {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.footerNavLinks:hover {
+    text-decoration: underline;
+    color: var(--color-primary);
+}
+
+.footerNavLinks i {
+    margin-right: 8px;
+}
 
 /* ------------- Individual Styles ------------- */
 .hbar {
-    border: 8px solid var(--color-secondary)
+    border: 8px solid var(--color-secondary);
+    width: 60%;
+
+}
+
+.u-section-padding-40 {
+    padding: 40px 0;
+}
+
+.listNoBullets {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.textWhite {
+    color: var(--color-white);
 }
