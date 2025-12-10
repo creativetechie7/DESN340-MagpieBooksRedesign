@@ -100,6 +100,7 @@ header {
     height: 180px;
 }
 
+
 /* Top row of the header - logo, search, and icons */
 .headerTop {
     background-color: var(--color-bg-light);
@@ -463,31 +464,15 @@ header {
     font-size: var(--font-size-sm);
 }
 
-/* Medium Screen - 3 books per section */
-@media screen and (max-width: 759px) {
-    .bookCard {
-        width: 110px;
-        height: 230px;
-        padding: 0.75em 0.4em;
-    }
-
-    .bookImageContainer {
-        width: 100px;
-        height: 140px;
-    }
-
-    .bookImageContainer img {
-        width: 85px;
-        height: 135px;
-    }
-
-    .bookCardsContainer {
-        gap: 1.5em;
-    }
-}
+/* Need to add desktop: hidden and mobile: hidden utility classes for header */
 
 /* Mobile (Small) - 2 books per section - 2x2 Grid for upcoming events */
 @media screen and (max-width: 478px) {
+    /* Hide items on mobile */
+    .mobileHidden {
+        display: none;
+    }
+
     .bookCard {
         width: 90px;
         height: 200px;
@@ -553,7 +538,6 @@ header {
         width: 100%;
         text-align: center;
     }
-
 }
 
 .carouselDots{
@@ -702,16 +686,132 @@ header {
 .externalPageButton {
     width: 100%;
     min-height: 40px;
-    margin: 32px;
+    margin: 16px;
     text-align: center;
 }
 
+/* Mobile override for externalPageButton */
+@media screen and (max-width: 478px) {
+    .externalPageButton {
+        margin: 16px 0;
+    }
+}
+
+.faqButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 5px;
+    background-color: var(--color-bg-dark);
+    color: var(--color-white);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+    border: none;
+    cursor: pointer;
+    margin: 0 6.5px 32px 6.5px; /* Top, Right, Bottom, Left Margin */
+    border-radius: var(--border-radius-lg);
+    gap: 10px;
+    height: 50px;
+    width: 120px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.faqButton:hover {
+    background-color: #555555;
+}
+
+.faqButton.active {
+    background-color: var(--color-primary);
+}
+
+.faqButton.active:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.faqQuestionButton {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 16px 0;
+    transition: opacity var(--transition-ease);
+}
+
+.faqQuestionButton h2 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    gap: 13px;
+    color: var(--color-text);
+    transition: color var(--transition-ease);
+}
+.faqQuestionButton:hover h2 {
+    color: var(--color-primary);
+}
+
+.faqQuestionButton .iconoir-arrow-down {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 20px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.faqQuestionButton.active .iconoir-arrow-down {
+    transform: rotate(180deg);
+}
+
+.faqAnswer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faqAnswer.active {
+    max-height: 500px;
+    padding: 0 0 16px 0;
+    opacity: 1;
+}
+
+.faqAnswer p {
+    margin: 8px 0 0 0; /* Top, Right, Bottom, Left Margin */
+}
+
+.borderSeparator {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.contactUsBox {
+    background-color: #d9d9d9;
+    height: 247px;
+    margin: 105px 132px 101px 132px; /* Top, Right, Bottom, Left Margin */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 65px;
+    padding: 0 111px; /* Left and Right Padding */
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 478px) {
+    .contactUsBox {
+        flex-direction: column;
+        height: auto;
+        margin: 50px 20px; /* Top and Bottom | Left and Right Margin */
+        padding: 40px 20px; /* Top and Bottom | Left and Right Padding */
+        gap: 30px;
+    }
+
+}
 
 .addToCartButton {}
 
 .quantityButton {}
 
-.faqButton {} /* Actually needed? */
+
 
 
 /* ------------- Footer Styles ------------- */
@@ -768,18 +868,18 @@ footer .listNoBullets i {
     font-size: 24px;
 }
 
-/* ------------- Footer Navigation Links ------------- */
-.footerNavLinks {
+/* ------------- Footer/External Navigation Links ------------- */
+.externalNavLinks {
     color: var(--color-white);
     text-decoration: none;
 }
 
-.footerNavLinks:hover {
+.externalNavLinks:hover {
     text-decoration: underline;
     color: var(--color-primary);
 }
 
-.footerNavLinks i {
+.externalNavLinks i {
     margin-right: 8px;
 }
 
@@ -802,4 +902,12 @@ footer .listNoBullets i {
 
 .textWhite {
     color: var(--color-white);
+}
+
+.textBlack {
+    color: var(--color-text);
+}
+
+.textBold {
+    font-weight: 700;
 }
