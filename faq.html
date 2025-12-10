@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        Magpie Books
+    </title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="styles/layout.css" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+    <link rel="manifest" href="images/site.webmanifest" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" />
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="headerTop">
+            <a href="index.html">
+                <!-- <img class="logo" src="images/magpie-logo.png" alt="Magpie Books Logo"  style="filter: blur(5px);"/> -->
+                <img class="logo" src="images/magpie-logo.png" alt="Magpie Books Logo" />
+            </a>
+            <!-- Search Bar -->
+            <div class="searchBar mobileHidden">
+                <input type="text" id="searchInput" placeholder="Search by title, author, subject, publisher, or ISBN"
+                    autocomplete="off" />
+                <button type="submit"><i class="iconoir-search"></i></button>
+                <div id="searchDropdown" class="searchDropdown"></div>
+            </div>
+            <!-- Icons for Shopping Cart and Account -->
+            <div class="shoppingAccountActions">
+                <button><i class="iconoir-user-circle"></i></button>
+                <button><i class="iconoir-shopping-bag"></i></button>
+            </div>
+        </div>
+        <!-- Navigation Bar -->
+        <nav class="navBar mobileHidden">
+            <ul class="navMenu">
+                <div class="dropdown">
+                    <li><a href="#" class="navLink ">Browse <i class="iconoir-arrow-down-tag"></i></a></li>
+                    <div class="dropdownContent">
+                        <a href="staff_picks.html">Staff Picks</a>
+                        <a href="#">Young Readers</a>
+                    </div>
+                </div>
+                <li><a href="#" class="navLink">Events</a></li>
+                <li><a href="#" class="navLink">Book Club</a></li>
+                <div class="dropdown">
+                    <li><a href="#" class="navLink">About <i class="iconoir-arrow-down-tag"></i></a></li>
+                    <div class="dropdownContent">
+                        <a href="#">Local Author Info</a>
+                        <a href="accessibility.html">Accessibility</a>
+                        <a href="faq.html">FAQ</a>
+                        <a href="#">Ordering</a>
+                        <a href="#">Shipping and Delivery</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+                <li><a href="#" class="navLink">Merch</a></li>
+                <!-- This is temporary for navigation-->
+                <li><a href="book_Addie_LaRue_information.html" class="navLink">Addie LaRue</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <main>
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p class="textBold">These are the most commonly asked questions about Magpie Books.</p>
+
+            <!-- Buttons to other pages -->
+            <div class="row rowJustifyCenter">
+                <div class="column columnLg2 columnSm6">
+                    <a href="accessibility.html" class="externalPageButton">Accessibility<i class="iconoir-arrow-right"></i></a>
+                </div>
+                <div class="column columnLg2 columnSm6">
+                    <a href="mailto:orders@magpiebooks.ca" class="externalPageButton">Order Inquiries<i class="iconoir-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- FAQ Button Section -->
+            <div class="row rowJustifyCenter">
+                <!-- In-Store Questions Button -->
+                <div class="column columnLg2 columnSm6">
+                    <button class="faqButton" data-target="inStore">In-Store Questions</button>
+                    <!-- NOTE: data-target is used for JavaScript functionality -->
+                </div>
+                <!-- Getting Here Button -->
+                <div class="column columnLg2 columnSm6">
+                    <button class="faqButton" data-target="gettingHere">Getting Here</button>
+                    <!-- NOTE: data-target is used for JavaScript functionality -->
+                </div>
+                <!-- Donations/Used Books Button -->
+                <div class="column columnLg2 columnSm6">
+                    <button class="faqButton" data-target="donations">Donations/Used Books</button>
+                    <!-- NOTE: data-target is used for JavaScript functionality -->
+                </div>
+                <!-- Discounts Button -->
+                <div class="column columnLg2 columnSm6">
+                    <button class="faqButton" data-target="discounts">Discounts</button>
+                    <!-- NOTE: data-target is used for JavaScript functionality -->
+                </div>
+                <!-- Hiring Button-->
+                <div class="column columnLg2 columnSm6">
+                    <button class="faqButton" data-target="hiring">Hiring</button>
+                    <!-- NOTE: data-target is used for JavaScript functionality -->
+                </div>
+            </div>
+
+            <!-- FAQ Content Section -->
+            <div class="row">
+                <!-- In-Store Questions Section -->
+                <div class="column columnLg12 columnSm12 faqSection" id="inStore">
+                    <!-- faqSection and id='inStore' used for JavaScript functionality -->
+                    <div class="borderSeparator">
+                        <button class="faqQuestionButton">
+                            <h2>Do you allow pets?<i class="iconoir-arrow-down"></i></h2>
+                        </button>
+                        <div class="faqAnswer">
+                            <p>
+                                Yes, we welcome well-behaved pets in the shop!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="borderSeparator">
+                        <button class="faqQuestionButton">
+                            <h2>Do you have a public restroom?<i class="iconoir-arrow-down"></i></h2>
+                        </button>
+                        <div class="faqAnswer">
+                            <p>
+                                Yes, we have a single occupancy washroom located at the back of our store that is free to use.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="borderSeparator">
+                        <button class="faqQuestionButton">
+                            <h2>Do you accept returns/refunds?<i class="iconoir-arrow-down"></i></h2>
+                        </button>
+                        <div class="faqAnswer">
+                            <p>
+                                We offer exchange or store credit on books in saleable condition within 30 days of
+                                purchase with proof of purchase. Special ordered books that we do not typically stock
+                                are final sale.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="borderSeparator">
+                        <button class="faqQuestionButton">
+                            <h2>Can I host an event in the shop?<i class="iconoir-arrow-down"></i></h2>
+                        </button>
+                        <div class="faqAnswer">
+                            <p>
+                                Maybe! We would love to hear more about your event, so please email us with details at:
+                                <a href="mailto:hello@magpiebooks.ca" class="textBlack externalNavLinks">hello@magpiebooks.ca.</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="borderSeparator">
+                        <button class="faqQuestionButton">
+                            <h2>I am a local artist/maker, can you stock my wares or host a pop-up?<i class="iconoir-arrow-down"></i></h2>
+                        </button>
+                        <div class="faqAnswer">
+                            <p>
+                                Magpie would love to host pop-ups from local artists/makers at no cost. Please send us
+                                an email to <a href="mailto:hello@magpiebooks.com"
+                                    class="textBlack externalNavLinks">hello@magpiebooks.com</a> to introduce yourself and your products.
+                                If our interests align, we would be happy to set up a day for you to pop-up in the
+                                store!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                    <!-- End In-Store Questions Section -->
+                <!-- Getting Here Section -->
+                <div class="column columnLg12 columnSm12 faqSection" id="gettingHere">
+                    <!-- faqSection and id='gettingHere' used for JavaScript functionality -->
+                    <div class="borderSeparator">
+                        <button class="faqQuestionButton">
+                            <h2>Where can I park?<i class="iconoir-arrow-down"></i></h2>
+                        </button>
+                        <div class="faqAnswer">
+                            <p>
+                                There is street parking along 76th avenue that is free. There is also a parking lot on
+                                the corner of 76 AVE and 96 ST.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="borderSeparator">
+                        <button class="faqQuestionButton">
+                            <h2>Bus Routes?<i class="iconoir-arrow-down"></i></h2>
+                        </button>
+                        <div class="faqAnswer">
+                            <p>
+                                Magpie Books is near bus stops 2344, 2132, and 2169. Bus routes 525 and 501 run at these
+                                stops.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Getting Here Section -->
+                <!-- Donations/Used Books Section -->
+                <div class="column columnLg12 columnSm12 faqSection" id="donations">
+                    <!-- faqSection and id='donations' used for JavaScript functionality -->
+                    <div class="borderSeparator">
+                        <button class="faqQuestionButton">
+                            <h2>Do you accept used books?<i class="iconoir-arrow-down"></i></h2>
+                        </button>
+                        <div class="faqAnswer">
+                            <p>
+                                Unfortunately, we do not accept used books. We encourage you to reach out to some of the
+                                incredible used book stores in Edmonton (Paper Birch, The Bookseller, The Wee Book Inn,
+                                and so many more!), or, if you are interested, we can donate some books on your behalf
+                                to a prison library.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="borderSeparator">
+                        <button class="faqQuestionButton">
+                            <h2>How do I contribute to the prison library donations?<i class="iconoir-arrow-down"></i></h2>
+                        </button>
+                        <div class="faqAnswer">
+                            <p>
+                                Magpie Books works with two different organisations to get books into prisons (NorQuest
+                                College and The Gela Prison Project). We send books there on a monthly or bi-monthly
+                                basis. If you would like to contribute, both organisations accept paperback books (no
+                                hardcover books, please), of all genres; books featuring racialized or queer characters
+                                and writers are particularly in demand. If you have any further questions, please send
+                                an email to <a href="mailto:hello@magpiebooks.ca"
+                                    class="textBlack externalNavLinks">hello@magpiebooks.ca.</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Donations/Used Books Section -->
+                <!-- Discounts Section -->
+                <div class="column columnLg12 columnSm12 faqSection" id="discounts">
+                    <!-- faqSection and id='discounts' used for JavaScript functionality -->
+                    <div class="borderSeparator">
+                        <button class="faqQuestionButton">
+                            <h2>Do you offer discounts to teachers?<i class="iconoir-arrow-down"></i></h2>
+                        </button>
+                        <div class="faqAnswer">
+                            <p>
+                                Yes, we offer teachers (K-12) a 15% discount on books. Please place your orders using
+                                your EPSB, EIPS, or other school email addresses and we can apply the discount.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Discounts Section -->
+                <!-- Hiring Section -->
+                <div class="column columnLg12 columnSm12 faqSection" id="hiring">
+                    <!-- faqSection and id='hiring' used for JavaScript functionality -->
+                    <div class="borderSeparator">
+                        <button class="faqQuestionButton">
+                            <h2>Are you hiring?<i class="iconoir-arrow-down"></i></h2>
+                        </button>
+                        <div class="faqAnswer">
+                            <p>
+                                Not at this time. While we wish we could, we are a small independent bookstore and do
+                                not have the capacity to hire extra staff. 🙁 We hope to be able to expand our staff
+                                very soon!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Hiring Section -->
+            </div>
+            <!-- End FAQ Content Row -->
+
+            <!-- Artist Credits Section - Outside FAQ sections so it shows on all tabs -->
+            <div class="row">
+                <div class="column columnLg12 columnSm12">
+                    <div style="margin-top: 120px;">
+                        <button class="faqQuestionButton artistCreditsQuestion">
+                            <h2>Artist Credits<i class="iconoir-arrow-down"></i></h2>
+                        </button>
+                        <div class="faqAnswer artistCreditsAnswer">
+                            <p>Magpie Books bird was illustrated by <a href="https://www.haliefinney.com" class="textBold textBlack externalNavLinks">Halie Finney.</a><br>
+                                Magpie Books branding was designed by <a href="https://www.janetking.ca/portfolio" class="textBold textBlack externalNavLinks">Janet King.</a><br>
+                                Magpie Books prairie bookmark was painted by <a href="https://www.nancynickolson.com/" class="textBold textBlack externalNavLinks">Nancy Nickolson.</a><br>
+                                We feel so privileged to have hired and worked with these incredible artists and
+                                designers! Please check out their websites and work. &lt;3 &lt;3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Artist Credits Section -->
+
+            <!-- Not Answered Here/Contact Us Section-->
+            <div class="row rowJustifyCenter">
+                <div class="column columnLg12 columnSm12">
+                    <div class="contactUsBox">
+                        <h2>Not Answered Here?</h2>
+                        <a href="#contact_us" class="externalPageButton">Contact Us<i class="iconoir-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Container -->
+    </main>
+
+    <!-- Footer -->
+      <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Column 1 - Bird Logo -->
+                <div class="column columnLg2 columnSm12">
+                    <a href="index.html"><img src="images/magpie-logo-bird-only.png" alt="Magpie Books Logo" /> </a>
+                </div>
+                <!-- End Column 1 -->
+
+                <!-- Column 2 - Find Us -->
+                <div class="column columnLg3 columnSm12">
+                    <p class="textWhite">Find us at:</p>
+                    <p class="textWhite footerText">Magpie Books<br>
+                        9553 76th Ave NW<br>
+                        Edmonton, AB<br>
+                        Canada T6C 0K1
+                    </p>
+                    <a href="#" class="mapHoursButton">Map & Hours<i class="iconoir-arrow-right"></i></a>
+                </div>
+                <!-- End Column 2 -->
+
+                <!-- Column 3 - Contact Us -->
+                <div class="column columnLg3 columnSm12">
+                    <p class="textWhite" id="contact_us">Contact Us</p>
+                    <ul class="listNoBullets">
+                        <li><i class="iconoir-phone"></i><a href="tel:780-435-0538"
+                                class="textWhite externalNavLinks">780-435-0538
+                            </a></li>
+                        <li><i class="iconoir-mail"></i><a href="mailto:hello@magpiebooks.ca"
+                                class="textWhite externalNavLinks">hello@magpiebooks.ca</a></li>
+                    </ul>
+                </div>
+                <!-- End Column 3 -->
+
+                <!-- Column 4 - Social & Terms -->
+                <div class="column columnLg4 columnSm12">
+                    <p class="textWhite">Social</p>
+                    <div class="footerSocialIcons">
+                        <a href="#" aria-label="Bluesky" class="socialIcon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-bluesky" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.468 1.948C5.303 3.325 7.276 6.118 8 7.616c.725-1.498 2.698-4.29 4.532-5.668C13.855.955 16 .186 16 2.632c0 .489-.28 4.105-.444 4.692-.572 2.04-2.653 2.561-4.504 2.246 3.236.551 4.06 2.375 2.281 4.2-3.376 3.464-4.852-.87-5.23-1.98-.07-.204-.103-.3-.103-.218 0-.081-.033.014-.102.218-.379 1.11-1.855 5.444-5.231 1.98-1.778-1.825-.955-3.65 2.28-4.2-1.85.315-3.932-.205-4.503-2.246C.28 6.737 0 3.12 0 2.632 0 .186 2.145.955 3.468 1.948" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="socialIcon">
+                            <i class="iconoir-instagram"></i>
+                        </a>
+                    </div>
+                    <a href="terms_of_service.html" class="externalNavLinks">Terms and Conditions</a>
+                </div>
+                <!-- End Column 4 -->
+            </div>
+            <!-- End of row -->
+        </div>
+        <!-- End of container -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/search.js"></script>
+    <script src="scripts/faq.js"></script>
+    </body>
+</html>
