@@ -9,6 +9,17 @@ function getBooksPerScreen() {
     }
 }
 
+// Helper function for smaller carousels (staff picks) - shows fewer books
+function getBooksPerScreenSmaller() {
+    if (window.innerWidth <= 478) {
+        return 2; // Mobile - 2 books
+    } else if (window.innerWidth <= 759) {
+        return 3; // Medium - 3 books
+    } else {
+        return 5; // Desktop - 5 books (same as regular)
+    }
+}
+
 // Calculate total sections needed based on total books and books per screen
 function calculateTotalSections(totalBooks, booksPerScreen) {
     return Math.ceil(totalBooks / booksPerScreen);
@@ -103,22 +114,58 @@ function initCarousel(carouselSection) {
     updateCarousel();
 }
 
-// staffPicks Carousel functionality - for staff picks page
-function initstaffPicksCarousel(staffPicksCarouselWrapper) {
+// Staff Picks Carousel functionality - for staff picks page
+// Uses the same class names as regular carousels but wrapped in .smallerCarousel
+function initStaffPicksCarousel(carouselSection) {
     let currentSection = 1;
-    const totalSections = 2;
 
-    // Get DOM elements within this specific staffPicks carousel
-    const arrows = staffPicksCarouselWrapper.querySelectorAll('.staffPicksCarouselArrow');
+    // Get DOM elements within this specific carousel section
+    const arrows = carouselSection.querySelectorAll('.carouselArrow');
     const leftArrow = arrows[0];
     const rightArrow = arrows[1];
-    const dots = staffPicksCarouselWrapper.querySelectorAll('.staffPicksDot');
-    const allBooks = staffPicksCarouselWrapper.querySelectorAll('.staffPicksBookCard[data-section]');
+    const allBooks = carouselSection.querySelectorAll('.bookCard[data-section]');
 
-    // Function to update staffPicks carousel state
-    function updatestaffPicksCarousel() {
-        // Update dots
-        dots.forEach((dot, index) => {
+    // Calculate dynamic values based on screen size (use smaller carousel function)
+    const booksPerScreen = getBooksPerScreenSmaller();
+    const totalBooks = allBooks.length;
+    const totalSections = calculateTotalSections(totalBooks, booksPerScreen);
+
+    // Create responsive book mapping (bookIndex → responsiveSection)
+    const responsiveBookMapping = {};
+    allBooks.forEach((book, index) => {
+        const responsiveSection = Math.floor(index / booksPerScreen) + 1;
+        responsiveBookMapping[index] = responsiveSection;
+    });
+
+    // Function to create dots dynamically based on totalSections
+    function createDots() {
+        const dotsContainer = carouselSection.querySelector('.carouselDots');
+        // Clear existing dots
+        dotsContainer.innerHTML = '';
+
+        // Create new dots based on totalSections
+        for (let i = 0; i < totalSections; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('carouselDot');
+            dot.setAttribute('data-section', i + 1);
+
+            // Add click event listener
+            dot.addEventListener('click', () => {
+                currentSection = i + 1;
+                updateCarousel();
+            });
+
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    // Function to update carousel state
+    function updateCarousel() {
+        // Get current dots (they may have been recreated)
+        const currentDots = carouselSection.querySelectorAll('.carouselDot');
+
+        // Update dots active state
+        currentDots.forEach((dot, index) => {
             if (index === currentSection - 1) {
                 dot.classList.add('active');
             } else {
@@ -127,26 +174,13 @@ function initstaffPicksCarousel(staffPicksCarouselWrapper) {
         });
 
         // Update arrow buttons
-        if (currentSection === 1) {
-            leftArrow.disabled = true;
-        } else {
-            leftArrow.disabled = false;
-        }
+        leftArrow.disabled = (currentSection === 1);
+        rightArrow.disabled = (currentSection === totalSections);
 
-        if (currentSection === totalSections) {
-            rightArrow.disabled = true;
-        } else {
-            rightArrow.disabled = false;
-        }
-
-        // Update which books are displayed
-        allBooks.forEach((book) => {
-            const bookSection = parseInt(book.getAttribute('data-section'));
-            if (bookSection === currentSection) {
-                book.style.display = 'block';
-            } else {
-                book.style.display = 'none';
-            }
+        // Update which books are displayed based on responsive sections
+        allBooks.forEach((book, index) => {
+            const bookResponsiveSection = responsiveBookMapping[index];
+            book.style.display = (bookResponsiveSection === currentSection) ? 'block' : 'none';
         });
     }
 
@@ -154,41 +188,34 @@ function initstaffPicksCarousel(staffPicksCarouselWrapper) {
     leftArrow.addEventListener('click', () => {
         if (currentSection > 1) {
             currentSection--;
-            updatestaffPicksCarousel();
+            updateCarousel();
         }
     });
 
     rightArrow.addEventListener('click', () => {
         if (currentSection < totalSections) {
             currentSection++;
-            updatestaffPicksCarousel();
+            updateCarousel();
         }
     });
 
-    // Event listeners for dots
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentSection = index + 1;
-            updatestaffPicksCarousel();
-        });
-    });
-
-    // Initialize carousel
-    updatestaffPicksCarousel();
+    // Create dots and initialize carousel
+    createDots();
+    updateCarousel();
 }
 
 // Initialize all carousels on the page
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize regular carousels
+    // Initialize regular carousels (on index.html)
     const carouselSections = document.querySelectorAll('.newInStore, .fallReleases, .comingSoon');
     carouselSections.forEach(section => {
         initCarousel(section);
     });
 
-    // Initialize staffPicks carousels
-    const staffPicksCarousels = document.querySelectorAll('.staffPicksCarouselWrapper');
-    staffPicksCarousels.forEach(staffPicksCarousel => {
-        initstaffPicksCarousel(staffPicksCarousel);
+    // Initialize staff picks carousels (on staff_picks.html)
+    const staffPicksCarousels = document.querySelectorAll('.smallerCarousel');
+    staffPicksCarousels.forEach(carousel => {
+        initStaffPicksCarousel(carousel);
     });
 });
 
@@ -201,6 +228,12 @@ window.addEventListener('resize', () => {
         const carouselSections = document.querySelectorAll('.newInStore, .fallReleases, .comingSoon');
         carouselSections.forEach(section => {
             initCarousel(section);
+        });
+
+        // Re-initialize staff picks carousels
+        const staffPicksCarousels = document.querySelectorAll('.smallerCarousel');
+        staffPicksCarousels.forEach(carousel => {
+            initStaffPicksCarousel(carousel);
         });
     }, 250); // Debounce to avoid excessive recalculations
 });
