@@ -129,6 +129,7 @@ header {
     height: 68px;
     background-color: var(--color-white);
     border: 1px solid var(--color-text);
+    border-radius: var(--border-radius-md);
     display: flex;
     align-items: center;
     padding: 0 16px; /* Left and Right Padding */
@@ -446,8 +447,13 @@ header {
     height: 255px;
     padding: 1em 0.5em;
 }
-/* If not datasection 1 then don't show at first */
+/* If not datasection 1 then don't show at first (for main carousels) */
 .bookCard[data-section]:not([data-section="1"]) {
+    display: none;
+}
+
+/* For smaller carousels, hide all books initially - JS will show the correct ones */
+.smallerCarousel .bookCard[data-section] {
     display: none;
 }
 
@@ -834,6 +840,202 @@ header {
 
 /* ------------- Staff Picks Styles ------------- */
 
+.staffPicksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 0 3em;
+    margin-bottom: 3.75em;
+}
+
+.staffPicksBox {
+    display: flex;
+    flex-wrap: wrap; /* Allow carousel to wrap to new row */
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-bg-light);
+    box-shadow: var(--box-shadow);
+}
+
+.staffPicksBox img {
+    margin: 2em 0 2em 5em; /* Top, Right, Bottom, Left Margin */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Override img margin for book info inside carousel */
+.staffPicksBox .smallerCarousel img {
+    margin: 2px auto; /* Top and Bottom | Left and Right Margin */
+}
+
+.staffPicksBox h3
+{
+    margin: 2em 5em 0 10em;
+}
+
+.staffPicksBox p {
+    margin: 1em 5em 2em 10em;
+}
+
+/* Override paragraph margin for book info inside carousel */
+.staffPicksBox .smallerCarousel .bookInfo {
+    margin: 0 0 4px 0;
+}
+
+.staffPicksContainer .row:nth-child(even) .staffPicksBox {
+    background-color: var(--color-primary);
+}
+
+.staffPicksContainer .row:nth-child(even) .staffPicksBox h3,
+.staffPicksContainer .row:nth-child(even) .staffPicksBox p {
+    color: var(--color-white);
+}
+
+/* Smaller carousel for staff picks - 80% of original size */
+.smallerCarousel {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1em 8em;
+    flex-basis: 100%; /* Take full width to appear on new row */
+}
+
+.smallerCarousel .bookCard {
+    width: 140px;   /* Increased width for better readability of author names */
+    height: 204px;  /* 255px * 0.8 */
+    padding: 0.8em 0.4em;
+}
+
+.smallerCarousel .bookImageContainer {
+    width: 96px;    /* 120px * 0.8 */
+    height: 128px;  /* 160px * 0.8 */
+}
+
+.smallerCarousel .bookImageContainer img {
+    width: 80px;    /* 100px * 0.8 */
+    height: 120px;  /* 150px * 0.8 */
+}
+
+.smallerCarousel .bookCardsContainer {
+    gap: 1.5em;
+}
+
+.smallerCarousel .bookCard .bookInfo {
+    margin: 0 0 4px 0;
+    text-align: left;
+}
+
+.smallerCarousel .bookCard .bookInfo:first-of-type {
+    font-size: 13px;
+}
+
+.smallerCarousel .bookCard .bookInfo:last-of-type {
+    font-size: 11px;
+}
+
+.smallerCarousel .carouselArrow i {
+    font-size: 1.8em;
+}
+
+/* Even row (green background) carousel overrides */
+.staffPicksContainer .row:nth-child(even) .smallerCarousel .bookCard {
+    background-color: var(--color-bg-light);
+}
+
+.staffPicksContainer .row:nth-child(even) .smallerCarousel .bookCard .bookInfo {
+    color: var(--color-text);
+}
+
+.staffPicksContainer .row:nth-child(even) .smallerCarousel .carouselArrow i {
+    color: var(--color-white);
+}
+
+.staffPicksContainer .row:nth-child(even) .smallerCarousel .carouselDot {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.staffPicksContainer .row:nth-child(even) .smallerCarousel .carouselDot.active {
+    background-color: var(--color-white);
+}
+
+.staffPicksContainer .row:nth-child(even) .smallerCarousel .viewProductsLink a {
+    color: var(--color-white);
+}
+
+/* Small Screen Responsive Styles for Staff Picks */
+@media screen and (max-width: 478px) {
+    .staffPicksContainer {
+        padding: 0 0.5em;
+    }
+
+    .staffPicksBox {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .staffPicksBox img {
+        margin: 1em auto;
+    }
+
+    .staffPicksBox h3 {
+        margin: 1em 1em 0 1em;
+    }
+
+    .staffPicksBox p {
+        margin: 0.5em 1em 1em 1em;
+    }
+
+    .smallerCarousel {
+        padding: 1em 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .smallerCarousel .carouselGrid {
+        width: 100%;
+        gap: 5px;
+    }
+
+    .smallerCarousel .bookCardsContainer {
+        gap: 1em;
+        justify-content: center;
+    }
+
+    /* Match the main carousel mobile book card sizes */
+    .smallerCarousel .bookCard {
+        width: 90px;
+        height: 200px;
+        padding: 0.5em 0.3em;
+    }
+
+    .smallerCarousel .bookImageContainer {
+        width: 80px;
+        height: 120px;
+    }
+
+    .smallerCarousel .bookImageContainer img {
+        width: 70px;
+        height: 115px;
+    }
+
+    .smallerCarousel .bookCard .bookInfo:first-of-type {
+        font-size: 11px;
+    }
+
+    .smallerCarousel .bookCard .bookInfo:last-of-type {
+        font-size: 11px;
+    }
+
+    .smallerCarousel .carouselArrow {
+        flex-shrink: 0;
+    }
+
+    .smallerCarousel .carouselArrow i {
+        font-size: 1.5em;
+    }
+}
 
 .addToCartButton {}
 
