@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        Staff Picks | Magpie Books
+    </title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="styles/layout.css" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+    <link rel="manifest" href="images/site.webmanifest" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" />
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="headerTop">
+            <a href="index.html">
+                <!-- <img class="logo" src="images/magpie-logo.png" alt="Magpie Books Logo"  style="filter: blur(5px);"/> -->
+                <img class="logo" src="images/magpie-logo.png" alt="Magpie Books Logo" />
+            </a>
+            <!-- Search Bar -->
+            <div class="searchBar mobileHidden">
+                <input type="text" id="searchInput" placeholder="Search by title, author, subject, publisher, or ISBN"
+                    autocomplete="off" />
+                <button type="submit"><i class="iconoir-search"></i></button>
+                <div id="searchDropdown" class="searchDropdown"></div>
+            </div>
+            <!-- Icons for Shopping Cart and Account -->
+            <div class="shoppingAccountActions">
+                <button><i class="iconoir-user-circle"></i></button>
+                <button><i class="iconoir-shopping-bag"></i></button>
+            </div>
+        </div>
+        <!-- Navigation Bar -->
+        <nav class="navBar mobileHidden">
+            <ul class="navMenu">
+                <div class="dropdown">
+                    <li><a href="#" class="navLink ">Browse <i class="iconoir-arrow-down-tag"></i></a></li>
+                    <div class="dropdownContent">
+                        <a href="staff_picks.html">Staff Picks</a>
+                        <a href="#">Young Readers</a>
+                    </div>
+                </div>
+                <li><a href="#" class="navLink">Events</a></li>
+                <li><a href="#" class="navLink">Book Club</a></li>
+                <div class="dropdown">
+                    <li><a href="#" class="navLink">About <i class="iconoir-arrow-down-tag"></i></a></li>
+                    <div class="dropdownContent">
+                        <a href="#">Local Author Info</a>
+                        <a href="accessibility.html">Accessibility</a>
+                        <a href="faq.html">FAQ</a>
+                        <a href="#">Ordering</a>
+                        <a href="#">Shipping and Delivery</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+                <li><a href="#" class="navLink">Merch</a></li>
+                <!-- This is temporary for navigation-->
+                <li><a href="book_Addie_LaRue_information.html" class="navLink">Addie LaRue</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="column columnLg12 columnSm12">
+                    <h1 class="textCenter">Staff Picks</h1>
+                    <h2 class="textCenter">meet the magpies and browse our fav books</h2>
+                </div>
+            </div>
+            <!-- Staff Picks Container -
+            contains all three boxes,
+            sets the gap between them and the margin
+            between the container and the footer -->
+            <div class="staffPicksContainer">
+            <div class="row">
+                <div class="column columnLg12 columnSm12">
+                    <!-- Julie Section -->
+                    <div class="staffPicksBox">
+                        <img src="images/staff-picks-julie.png" alt="Image of Julie"/>
+                        <div class="column columnLg8 columnSm12">
+                            <h3 id="julieSection">julie 🍄 (bookseller)</h3>
+                            <p><strong>Julie (she/her)</strong> is a knitter, weaver, and self-proclaimed reality tv anthropologist. <br>
+                                She loves sparse, detached, sad prose, and is always on the hunt for good texts about craft. <br>
+                                Ask her about Iris Murdoch!</p>
+                        </div>
+                        <div class="smallerCarousel">
+                            <div class="carouselWrapper">
+                                <div class="carouselGrid">
+                                    <button class="carouselArrow" disabled><i class="iconoir-arrow-left-circle"></i></button>
+                                    <div class="bookCardsContainer">
+                                        <!-- Book 1 Section 1 -->
+                                        <div class="bookCard" data-section="1">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-julie-section/book-abigail-magda-szabo-len-rix.jpeg"
+                                                    alt="Abigail by Magda Szabó, Len Rix Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Abigail</p>
+                                            <p class="bookInfo">Magda Szabó, Len Rix</p>
+                                        </div>
+                                        <!-- Book 2 Section 1 -->
+                                        <div class="bookCard" data-section="1">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-julie-section/book-another-word-for-love-carvell-wallace.jpeg"
+                                                    alt="Another Word for Love by Carvell Wallace Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Another Word for Love</p>
+                                            <p class="bookInfo">Carvell Wallace</p>
+                                        </div>
+                                        <!-- Book 3 Section 1 -->
+                                        <div class="bookCard" data-section="1">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-julie-section/book-clear-carys-davies.jpeg"
+                                                    alt="Clear by Carys Davies Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Clear</p>
+                                            <p class="bookInfo">Carys Davies</p>
+                                        </div>
+                                        <!-- Book 4 Section 1 -->
+                                        <div class="bookCard" data-section="1">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-julie-section/book-gliff-ali-smith.jpeg"
+                                                    alt="Gliff by Ali Smith Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Gliff</p>
+                                            <p class="bookInfo">Ali Smith</p>
+                                        </div>
+                                        <!-- Book 5 Section 1 -->
+                                        <div class="bookCard" data-section="1">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-julie-section/book-I-gave-you-eyes-and-you-looked-toward-darkness-irene-sola.jpeg"
+                                                    alt="I Gave You Eyes and You Looked Toward Darkness by Irene Solà Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">I Gave You Eyes and You Looked Toward Darkness</p>
+                                            <p class="bookInfo">Irene Solà</p>
+                                        </div>
+                                        <!-- Book 1 Section 2 -->
+                                        <div class="bookCard" data-section="2">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-julie-section/book-my-brilliant-friend-elena-ferrante.jpeg"
+                                                    alt="My Brilliant Friend by Elena Ferrante Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">My Brilliant Friend</p>
+                                            <p class="bookInfo">Elena Ferrante</p>
+                                        </div>
+                                        <!-- Book 2 Section 2 -->
+                                        <div class="bookCard" data-section="2">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-julie-section/book-recognizing-the-stranger-isabella-hammad.jpeg"
+                                                    alt="Recognizing the Stranger by Isabella Hammad Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Recognizing the Stranger</p>
+                                            <p class="bookInfo">Isabella Hammad</p>
+                                        </div>
+                                        <!-- Book 3 Section 2 -->
+                                        <div class="bookCard" data-section="2">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-julie-section/book-rescue-me-margret-grebowicz.jpeg"
+                                                    alt="Rescue Me by Margret Grebowicz Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Rescue Me</p>
+                                            <p class="bookInfo">Margret Grebowicz</p>
+                                        </div>
+                                        <!-- Book 4 Section 2 -->
+                                        <div class="bookCard" data-section="2">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-julie-section/book-softness-jean-oberlander.jpeg"
+                                                    alt="Softness by Jean Oberlander Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Softness</p>
+                                            <p class="bookInfo">Jean Oberlander</p>
+                                        </div>
+                                        <!-- Book 5 Section 2 -->
+                                        <div class="bookCard" data-section="2">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-julie-section/book-the-bell-iris-murdoch.jpeg"
+                                                    alt="The Bell by Iris Murdoch Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">The Bell</p>
+                                            <p class="bookInfo">Iris Murdoch</p>
+                                        </div>
+                                        <!-- Book 1 Section 3 -->
+                                        <div class="bookCard" data-section="3">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-julie-section/book-the-catch-yrsa-daley-ward.jpeg"
+                                                    alt="The Catch by Yrsa Daley-Ward Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">The Catch</p>
+                                            <p class="bookInfo">Yrsa Daley-Ward</p>
+                                        </div>
+                                        <!-- Book 2 Section 3 -->
+                                        <div class="bookCard" data-section="3">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-julie-section/book-the-lack-of-light-nino-haratischwili.jpeg"
+                                                    alt="The Lack of Light by Nino Haratischwili Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">The Lack of Light</p>
+                                            <p class="bookInfo">Nino Haratischwili</p>
+                                        </div>
+                                        <!-- Book 3 Section 3 -->
+                                        <div class="bookCard" data-section="3">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-julie-section/book-the-sea-the-sea-iris-murdoch.jpeg"
+                                                    alt="The Sea, The Sea by Iris Murdoch Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">The Sea, The Sea</p>
+                                            <p class="bookInfo">Iris Murdoch</p>
+                                        </div>
+                                        <!-- Book 4 Section 3 -->
+                                        <div class="bookCard" data-section="3">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-julie-section/book-theres-always-this-year-hanif-abdurraqib.jpeg"
+                                                    alt="There's Always This Year by Hanif Abdurraqib Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">There's Always This Year</p>
+                                            <p class="bookInfo">Hanif Abdurraqib</p>
+                                        </div>
+                                        <!-- Book 5 Section 3 -->
+                                        <div class="bookCard" data-section="3">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-julie-section/book-to-anyone-who-ever-asks-howard-fishman.jpeg"
+                                                    alt="To Anyone Who Ever Asks by Howard Fishman Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">To Anyone Who Ever Asks</p>
+                                            <p class="bookInfo">Howard Fishman</p>
+                                        </div>
+                                    </div>
+                                    <button class="carouselArrow"><i class="iconoir-arrow-right-circle"></i></button>
+                                    <div class="carouselFooter">
+                                        <div class="carouselDots">
+                                            <span class="carouselDot active" data-section="1"></span>
+                                            <span class="carouselDot" data-section="2"></span>
+                                            <span class="carouselDot" data-section="3"></span>
+                                        </div>
+                                        <div class="viewProductsLink">
+                                            <a href="#julieSection">View all products</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End of staffPicksBox Julie -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="column columnLg12 columnSm12">
+                    <!-- Moriah Section -->
+                    <div class="staffPicksBox">
+                        <img src="images/staff-picks-moriah.png" alt="Image of Moriah"/>
+                        <div class="column columnLg8 columnSm12">
+                            <h3 id="moriahSection">moriah 🌾 (bookseller)</h3>
+                            <p>Moriah (she/her/wiya) is a graduate student who will read almost anything. <br>
+                                She likes literary fiction, romance, and Maggie O'Farrell. Talk to her about Hamnet at your own risk. <br>
+                                When she's not at work (work too, tbh), she beads, watches too much TikTok, and loves hot gossip (please).</p>
+                        </div>
+                        <div class="smallerCarousel">
+                            <div class="carouselWrapper">
+                                <div class="carouselGrid">
+                                    <button class="carouselArrow" disabled><i class="iconoir-arrow-left-circle"></i></button>
+                                    <div class="bookCardsContainer">
+                                        <!-- Book 1 Section 1 -->
+                                        <div class="bookCard" data-section="1">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-moriah-section/book-a-steady-brightness-of-being-sara-sinclair-stephanie-sinclair.jpeg"
+                                                    alt="A Steady Brightness of Being by Sara Sinclair, Stephanie Sinclair Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">A Steady Brightness of Being</p>
+                                            <p class="bookInfo">Sara Sinclair, Stephanie Sinclair</p>
+                                        </div>
+                                        <!-- Book 2 Section 1 -->
+                                        <div class="bookCard" data-section="1">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-moriah-section/book-bead-talk-carmen-l-robertson-judy-anderson-katherine-boyer.jpeg"
+                                                    alt="Bead Talk by Carmen L. Robertson, Judy Anderson, Katherine Boyer Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Bead Talk</p>
+                                            <p class="bookInfo">Carmen L. Robertson, Judy Anderson, Katherine Boyer</p>
+                                        </div>
+                                        <!-- Book 3 Section 1 -->
+                                        <div class="bookCard" data-section="1">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-moriah-section/book-cousin-bear-comes-to-visit-halie-finney.jpeg"
+                                                    alt="Cousin Bear Comes to Visit by Halie Finney Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Cousin Bear Comes to Visit</p>
+                                            <p class="bookInfo">Halie Finney</p>
+                                        </div>
+                                        <!-- Book 4 Section 1 -->
+                                        <div class="bookCard" data-section="1">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-moriah-section/book-intermezzo-sally-rooney.jpeg"
+                                                    alt="Intermezzo by Sally Rooney Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Intermezzo</p>
+                                            <p class="bookInfo">Sally Rooney</p>
+                                        </div>
+                                        <!-- Book 5 Section 1 -->
+                                        <div class="bookCard" data-section="1">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-moriah-section/book-legendborn-tracy-deonn.jpeg"
+                                                    alt="Legendborn by Tracy Deonn Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Legendborn</p>
+                                            <p class="bookInfo">Tracy Deonn</p>
+                                        </div>
+                                        <!-- Book 1 Section 2 -->
+                                        <div class="bookCard" data-section="2">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-moriah-section/book-love-is-a-war-song-danica-nava.jpeg"
+                                                    alt="Love Is a War Song by Danica Nava Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Love Is a War Song</p>
+                                            <p class="bookInfo">Danica Nava</p>
+                                        </div>
+                                        <!-- Book 2 Section 2 -->
+                                        <div class="bookCard" data-section="2">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-moriah-section/book-mate-ali-hazelwood.jpeg"
+                                                    alt="Mate by Ali Hazelwood Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Mate</p>
+                                            <p class="bookInfo">Ali Hazelwood</p>
+                                        </div>
+                                        <!-- Book 3 Section 2 -->
+                                        <div class="bookCard" data-section="2">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-moriah-section/book-milo-the-knight-gregoire-laforce.jpeg"
+                                                    alt="Milo the Knight by Grégoire Laforce Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Milo the Knight</p>
+                                            <p class="bookInfo">Grégoire Laforce</p>
+                                        </div>
+                                        <!-- Book 4 Section 2 -->
+                                        <div class="bookCard" data-section="2">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-moriah-section/book-minor-black-figures-brandon-taylor.jpeg"
+                                                    alt="Minor Black Figures by Brandon Taylor Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Minor Black Figures</p>
+                                            <p class="bookInfo">Brandon Taylor</p>
+                                        </div>
+                                        <!-- Book 5 Section 2 -->
+                                        <div class="bookCard" data-section="2">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-moriah-section/book-minor-rapture-makda-mulatu.jpeg"
+                                                    alt="Minor Rapture by Makda Mulatu Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Minor Rapture</p>
+                                            <p class="bookInfo">Makda Mulatu</p>
+                                        </div>
+                                        <!-- Book 1 Section 3 -->
+                                        <div class="bookCard" data-section="3">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-moriah-section/book-promise-me-sunshine-cara-bastone.jpeg"
+                                                    alt="Promise Me Sunshine by Cara Bastone Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Promise Me Sunshine</p>
+                                            <p class="bookInfo">Cara Bastone</p>
+                                        </div>
+                                        <!-- Book 2 Section 3 -->
+                                        <div class="bookCard" data-section="3">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-moriah-section/book-recognizing-the-stranger-isabella-hammad.jpeg"
+                                                    alt="Recognizing the Stranger by Isabella Hammad Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Recognizing the Stranger</p>
+                                            <p class="bookInfo">Isabella Hammad</p>
+                                        </div>
+                                        <!-- Book 3 Section 3 -->
+                                        <div class="bookCard" data-section="3">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-moriah-section/book-the-knight-and-the-moth-rachel-gillig.jpeg"
+                                                    alt="The Knight and the Moth by Rachel Gillig Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">The Knight and the Moth</p>
+                                            <p class="bookInfo">Rachel Gillig</p>
+                                        </div>
+                                        <!-- Book 4 Section 3 -->
+                                        <div class="bookCard" data-section="3">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-moriah-section/book-the-trees-percival-everett.jpeg"
+                                                    alt="The Trees by Percival Everett Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">The Trees</p>
+                                            <p class="bookInfo">Percival Everett</p>
+                                        </div>
+                                        <!-- Book 5 Section 3 -->
+                                        <div class="bookCard" data-section="3">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-moriah-section/book-tusk-love-thea-guanzon.jpeg"
+                                                    alt="Tusk Love by Thea Guanzon Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Tusk Love</p>
+                                            <p class="bookInfo">Thea Guanzon</p>
+                                        </div>
+                                    </div>
+                                    <button class="carouselArrow"><i class="iconoir-arrow-right-circle"></i></button>
+                                    <div class="carouselFooter">
+                                        <div class="carouselDots">
+                                            <span class="carouselDot active" data-section="1"></span>
+                                            <span class="carouselDot" data-section="2"></span>
+                                            <span class="carouselDot" data-section="3"></span>
+                                        </div>
+                                        <div class="viewProductsLink">
+                                            <a href="#moriahSection">View all products</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End of staffPicksBox Moriah -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="column columnLg12 columnSm12">
+                    <!-- Leah Section -->
+                    <div class="staffPicksBox">
+                        <img src="images/staff-picks-leah.png" alt="Image of Leah" />
+                        <div class="column columnLg8 columnSm12">
+                            <h3 id="leahSection">leah 🌲 (bookseller)</h3>
+                            <p>Leah (they/she) is a student and occasional writer, who will try any book once (or twice). <br>
+                                They love poetry, non-fiction, and memoirs. She loves daydreaming, "bad" television, and Mill Creek Ravine.</p>
+                        </div>
+                        <div class="smallerCarousel">
+                            <div class="carouselWrapper">
+                                <div class="carouselGrid">
+                                    <button class="carouselArrow" disabled><i class="iconoir-arrow-left-circle"></i></button>
+                                    <div class="bookCardsContainer">
+                                        <!-- Book 1 Section 1 -->
+                                        <div class="bookCard" data-section="1">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-leah-section/book-annie-john-jamaica-kincaid.jpeg"
+                                                    alt="Annie John by Jamaica Kincaid Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Annie John</p>
+                                            <p class="bookInfo">Jamaica Kincaid</p>
+                                        </div>
+                                        <!-- Book 2 Section 1 -->
+                                        <div class="bookCard" data-section="1">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-leah-section/book-bluff-danez-smith.jpeg"
+                                                    alt="Bluff by Danez Smith Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Bluff</p>
+                                            <p class="bookInfo">Danez Smith</p>
+                                        </div>
+                                        <!-- Book 3 Section 1 -->
+                                        <div class="bookCard" data-section="1">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-leah-section/book-crohnic-jason-purcell.jpeg"
+                                                    alt="Crohnic by Jason Purcell Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Crohnic</p>
+                                            <p class="bookInfo">Jason Purcell</p>
+                                        </div>
+                                        <!-- Book 4 Section 1 -->
+                                        <div class="bookCard" data-section="1">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-leah-section/book-minor-rapture-makda-mulatu.jpeg"
+                                                    alt="Minor Rapture by Makda Mulatu Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Minor Rapture</p>
+                                            <p class="bookInfo">Makda Mulatu</p>
+                                        </div>
+                                        <!-- Book 5 Section 1 -->
+                                        <div class="bookCard" data-section="1">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-leah-section/book-open-water-caleb-azumah-nelson.jpeg"
+                                                    alt="Open Water by Caleb Azumah Nelson Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Open Water</p>
+                                            <p class="bookInfo">Caleb Azumah Nelson</p>
+                                        </div>
+                                        <!-- Book 1 Section 2 -->
+                                        <div class="bookCard" data-section="2">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-leah-section/book-poukahangatus-tayi-tibble.jpeg"
+                                                    alt="Poukahangatus by Tayi Tibble Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Poukahangatus</p>
+                                            <p class="bookInfo">Tayi Tibble</p>
+                                        </div>
+                                        <!-- Book 2 Section 2 -->
+                                        <div class="bookCard" data-section="2">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-leah-section/book-say-fire-selma-asotic.jpeg"
+                                                    alt="Say Fire by Selma Asotić Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Say Fire</p>
+                                            <p class="bookInfo">Selma Asotić</p>
+                                        </div>
+                                        <!-- Book 3 Section 2 -->
+                                        <div class="bookCard" data-section="2">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-leah-section/book-sister-outsider-audre-lorde-cheryl-clarke.jpeg"
+                                                    alt="Sister Outsider by Audre Lorde, Cheryl Clarke Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Sister Outsider</p>
+                                            <p class="bookInfo">Audre Lorde, Cheryl Clarke</p>
+                                        </div>
+                                        <!-- Book 4 Section 2 -->
+                                        <div class="bookCard" data-section="2">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-leah-section/book-sourdough-infinity-emily-hoven.jpeg"
+                                                    alt="Sourdough Infinity by Emily Hoven Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Sourdough Infinity</p>
+                                            <p class="bookInfo">Emily Hoven</p>
+                                        </div>
+                                        <!-- Book 5 Section 2 -->
+                                        <div class="bookCard" data-section="2">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-leah-section/book-south-side-of-a-kinless-river-marilyn-dumont.jpeg"
+                                                    alt="South Side of a Kinless River by Marilyn Dumont Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">South Side of a Kinless River</p>
+                                            <p class="bookInfo">Marilyn Dumont</p>
+                                        </div>
+                                        <!-- Book 1 Section 3 -->
+                                        <div class="bookCard" data-section="3">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-leah-section/book-sunburn-chloe-michelle-howarth.jpeg"
+                                                    alt="Sunburn by Chloe Michelle Howarth Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Sunburn</p>
+                                            <p class="bookInfo">Chloe Michelle Howarth</p>
+                                        </div>
+                                        <!-- Book 2 Section 3 -->
+                                        <div class="bookCard" data-section="3">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-leah-section/book-the-undocumented-americans-karla-cornejo-villavicencio.jpeg"
+                                                    alt="The Undocumented Americans by Karla Cornejo Villavicencio Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">The Undocumented Americans</p>
+                                            <p class="bookInfo">Karla Cornejo Villavicencio</p>
+                                        </div>
+                                        <!-- Book 3 Section 3 -->
+                                        <div class="bookCard" data-section="3">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-leah-section/book-the-world-after-rain-canisia-lubrin.jpeg"
+                                                    alt="The World After Rain by Canisia Lubrin Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">The World After Rain</p>
+                                            <p class="bookInfo">Canisia Lubrin</p>
+                                        </div>
+                                        <!-- Book 4 Section 3 -->
+                                        <div class="bookCard" data-section="3">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-leah-section/book-theory-of-water-leanne-betasamosake-simpson.jpeg"
+                                                    alt="Theory of Water by Leanne Betasamosake Simpson Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Theory of Water</p>
+                                            <p class="bookInfo">Leanne Betasamosake Simpson</p>
+                                        </div>
+                                        <!-- Book 5 Section 3 -->
+                                        <div class="bookCard" data-section="3">
+                                            <div class="bookImageContainer">
+                                                <img src="images/staff-picks-leah-section/book-yellowface-r-f-kuang.jpeg"
+                                                    alt="Yellowface by R.F. Kuang Book Cover" />
+                                            </div>
+                                            <p class="bookInfo">Yellowface</p>
+                                            <p class="bookInfo">R.F. Kuang</p>
+                                        </div>
+                                    </div>
+                                    <button class="carouselArrow"><i class="iconoir-arrow-right-circle"></i></button>
+                                    <div class="carouselFooter">
+                                        <div class="carouselDots">
+                                            <span class="carouselDot active" data-section="1"></span>
+                                            <span class="carouselDot" data-section="2"></span>
+                                            <span class="carouselDot" data-section="3"></span>
+                                        </div>
+                                        <div class="viewProductsLink">
+                                            <a href="#leahSection">View all products</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End of staffPicksBox Leah -->
+                </div>
+            </div>
+            </div><!-- End of staffPicksContainer -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Column 1 - Bird Logo -->
+                <div class="column columnLg2 columnSm12">
+                    <a href="index.html"><img src="images/magpie-logo-bird-only.png" alt="Magpie Books Logo" /> </a>
+                </div>
+                <!-- End Column 1 -->
+
+                <!-- Column 2 - Find Us -->
+                <div class="column columnLg3 columnSm12">
+                    <p class="textWhite">Find us at:</p>
+                    <p class="textWhite footerText">Magpie Books<br>
+                        9553 76th Ave NW<br>
+                        Edmonton, AB<br>
+                        Canada T6C 0K1
+                    </p>
+                    <a href="#" class="mapHoursButton">Map & Hours<i class="iconoir-arrow-right"></i></a>
+                </div>
+                <!-- End Column 2 -->
+
+                <!-- Column 3 - Contact Us -->
+                <div class="column columnLg3 columnSm12">
+                    <p class="textWhite">Contact Us</p>
+                    <ul class="listNoBullets">
+                        <li><i class="iconoir-phone"></i><a href="tel:780-435-0538"
+                                class="textWhite externalNavLinks">780-435-0538
+                            </a></li>
+                        <li><i class="iconoir-mail"></i><a href="mailto:hello@magpiebooks.ca"
+                                class="textWhite externalNavLinks">hello@magpiebooks.ca</a></li>
+                    </ul>
+                </div>
+                <!-- End Column 3 -->
+
+                <!-- Column 4 - Social & Terms -->
+                <div class="column columnLg4 columnSm12">
+                    <p class="textWhite">Social</p>
+                    <div class="footerSocialIcons">
+                        <a href="#" aria-label="Bluesky" class="socialIcon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-bluesky" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.468 1.948C5.303 3.325 7.276 6.118 8 7.616c.725-1.498 2.698-4.29 4.532-5.668C13.855.955 16 .186 16 2.632c0 .489-.28 4.105-.444 4.692-.572 2.04-2.653 2.561-4.504 2.246 3.236.551 4.06 2.375 2.281 4.2-3.376 3.464-4.852-.87-5.23-1.98-.07-.204-.103-.3-.103-.218 0-.081-.033.014-.102.218-.379 1.11-1.855 5.444-5.231 1.98-1.778-1.825-.955-3.65 2.28-4.2-1.85.315-3.932-.205-4.503-2.246C.28 6.737 0 3.12 0 2.632 0 .186 2.145.955 3.468 1.948" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="socialIcon">
+                            <i class="iconoir-instagram"></i>
+                        </a>
+                    </div>
+                    <a href="terms_of_service.html" class="externalNavLinks">Terms and Conditions</a>
+                </div>
+                <!-- End Column 4 -->
+            </div>
+            <!-- End of row -->
+        </div>
+        <!-- End of container -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/search.js"></script>
+    <script src="scripts/carousel.js"></script>
+</body>
+</html>
