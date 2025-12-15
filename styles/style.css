@@ -241,22 +241,59 @@ header {
     color: var(--color-text);
 }
 
+/* Mobile Menu Toggle Button - Hidden on desktop */
+.mobileMenuToggle {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobileMenuToggle i {
+    font-size: 1.5em;
+    color: var(--color-text);
+}
+
 @media screen and (max-width: 478px) {
+    /* Reduce header height on mobile since navBar is hidden */
+    header {
+        height: 100px;
+    }
+
+    .headerTop {
+        height: 100px;
+    }
+
     .logo {
         height: 12em;
         width: 12em;
-        top: -35px;
+        top: -45px;
         left: 10px;
     }
 
     .shoppingAccountActions {
-        right: 20px;
-        top: 40px;
+        right: 50px;
+        top: 50%;
+        transform: translateY(-50%);
         gap: 8px;
     }
 
     .shoppingAccountActions button i {
         font-size: 1.5em;
+    }
+
+    /* Show mobile menu toggle button on mobile */
+    .mobileMenuToggle {
+        display: flex;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }
 
@@ -315,6 +352,51 @@ header {
 
 .navLink i {
     font-size: 24px;
+}
+
+/* Mobile Navigation Menu - Hidden on desktop */
+.mobileNav {
+    display: none;
+}
+
+/* Show and style mobile nav on mobile devices */
+@media screen and (max-width: 478px) {
+    .mobileNav {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: var(--color-bg-light);
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
+        padding-top: 60px;
+    }
+
+    .mobileNav.active {
+        right: 0;
+    }
+
+    .mobileNavMenu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .mobileNavMenu li {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .mobileNavLink {
+        display: block;
+        padding: 16px 20px;
+        color: var(--color-text);
+        text-decoration: none;
+        transition: background-color var(--transition-ease);
+    }
 }
 
 /* ------------- End of Navigation Bar ------------- */
@@ -1037,11 +1119,230 @@ header {
     }
 }
 
-.addToCartButton {}
+/* ------------- Invisible Life of Addie LaRue Section ------------- */
+.authorName {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h3);
+    font-weight: 700;
+    line-height: var(--line-height-tight);
+}
 
-.quantityButton {}
+.bookCoverImage {
+    width: 100%;
+    margin-top: 15px;
+    object-fit: cover;
+    border: 1px solid var(--color-text);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow);
+}
+
+.backgroundBox {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-white);
+    border: 1px solid var(--color-text);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius-md);
+    margin: 15px 40px 20px 40px;
+}
 
 
+.backgroundBox h1 {
+    margin: 1em 1.5em 0 1.5em;
+}
+
+.backgroundBox h2,
+.backgroundBox h3 {
+    margin: 0.5em 1.5em;
+}
+.backgroundBox h4 {
+    margin: 0.5em 1.5em 0 1.5em;
+}
+.backgroundBox p {
+    margin: 0.5em 1.5em;
+}
+
+.backgroundBox .authorName {
+    margin: 0.5em 1.5em 0 2.2em;
+}
+
+.backgroundBox .authorName + p {
+    margin: 1em 0 0 2.5em; /* Top, Right, Bottom, Left Margin */
+}
+.backgroundBox .authorName + p + p {
+    margin: 0 0 1em 2.5em; /* Top, Right, Bottom, Left Margin */
+}
+
+.backgroundBox ul {
+    margin: 0 0 10px 0; /* Top, Right, Bottom, Left Margin */
+    list-style: none;
+}
+
+/* Bullet points for other books list */
+.backgroundBox ul li::before {
+    content: "- ";
+    margin-right: 5px;
+}
+
+.orderSection {
+    padding: 1em;
+    height: fit-content;
+    width: 100%;
+}
+
+.stockStatus.outOfStock {
+    color: var(--color-danger);
+}
+
+.quantitySelector {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 0 0 18px 0; /* Top, Right, Bottom, Left Margin */
+    justify-content: center;
+}
+
+/* Quantity buttons */
+.quantityButton {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    line-height: 1;
+    border: none;
+    cursor: pointer;
+}
+
+.quantityInput {
+    width: 4em;
+    height: 2em;
+    text-align: center;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    appearance: textfield;
+    line-height: 1;
+    -moz-appearance: textfield;
+}
+
+/* Remove arrows in number input for Webkit-based browsers - misaligns otherwise */
+.quantityInput::-webkit-outer-spin-button,
+.quantityInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.addToCartButton
+{
+    width: 10em;
+    height: 2.5em;
+    border-radius: var(--border-radius-lg);
+    line-height: 1;
+    display: block;
+    margin: 0 auto; /* Center the button */
+}
+
+/* TEMPORARY: Clear Cart Button for Development */
+.clearCartButton {
+    width: 10em;
+    height: 1.5em;
+    border-radius: var(--border-radius-lg);
+    line-height: 1;
+    background-color: var(--color-danger);
+    color: var(--color-white);
+    display: block;
+    border: none;
+    margin: 10px auto 0 auto; /* Center the button */
+}
+
+.clearCartButton:hover {
+    background-color: var(--color-danger-dark);
+}
+
+/* Hide mobile buttons on desktop */
+.mobileBookInfoButtons {
+    display: none;
+}
+
+/* Accessibility page - make image fit on mobile */
+@media screen and (max-width: 478px) {
+    .column img[src="images/magpie-books-outside-accessibility.png"] {
+        width: 95%;
+        height: auto;
+    }
+}
+
+/* Mobile book page styles */
+@media screen and (max-width: 478px) {
+    /* Show mobile buttons */
+    .mobileBookInfoButtons {
+        display: block;
+        padding: 0 20px;
+    }
+
+    /* Style for the toggle buttons */
+    .bookInfoButton {
+        background-color: var(--color-bg-dark);
+        color: var(--color-white);
+        padding: 12px 16px;
+        border: none;
+        border-radius: var(--border-radius-lg);
+        cursor: pointer;
+        width: 100%;
+        margin: 8px 0;
+        font-size: var(--font-size-base);
+        transition: background-color var(--transition-ease);
+    }
+
+    .bookInfoButton.active {
+        background-color: var(--color-primary);
+    }
+
+    /* Reduce margins on all background boxes */
+    .backgroundBox {
+        margin: 15px 5px 20px 5px;
+    }
+
+    /* Make book cover smaller and centered */
+    .bookCoverImage {
+        width: 70%;
+        margin: 15px auto;
+        display: block;
+    }
+
+    .orderSection {
+        padding: 1em 0em;
+    }
+
+    /* Hide title section on mobile - redundant with book details */
+    #bookTitle {
+        display: none !important;
+    }
+
+    /* Hide details and author sections by default on mobile */
+    #bookDetails,
+    #authorDetails,
+    #orderInfo {
+        display: none;
+    }
+
+    /* Show section when it has active class */
+    #bookDetails.active,
+    #authorDetails.active,
+    #orderInfo.active {
+        display: flex;
+    }
+
+    .cartBadge {
+        top: 60%;
+        left: 50%;
+        height: 12px;
+        width: 12px;
+    }
+}
 
 
 /* ------------- Footer Styles ------------- */
@@ -1055,6 +1356,33 @@ footer img {
     height: 116px;
     width: 116px;
     object-fit: contain;
+}
+
+.footerLogoContainer {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.footerLogo{
+    position: relative;
+    z-index: 2;
+    display: block;
+}
+
+.footerLogoContainer::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 100%;
+    height: 100%;
+    background: white;
+
+    filter: blur(25px);
+    opacity: 1;
+    z-index: -1;
 }
 
 footer p:first-child {
