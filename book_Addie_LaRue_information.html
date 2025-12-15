@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        The Invisible Life of Addie LaRue by V.E. Schwab | Magpie Books
+    </title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="styles/layout.css" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+    <link rel="manifest" href="images/site.webmanifest" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" />
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="headerTop">
+            <a href="index.html">
+                <!-- <img class="logo" src="images/magpie-logo.png" alt="Magpie Books Logo"  style="filter: blur(5px);"/> -->
+                <img class="logo" src="images/magpie-logo.png" alt="Magpie Books Logo" />
+            </a>
+            <!-- Search Bar -->
+            <div class="searchBar mobileHidden">
+                <input type="text" id="searchInput" placeholder="Search by title, author, subject, publisher, or ISBN"
+                    autocomplete="off" />
+                <button type="submit"><i class="iconoir-search"></i></button>
+                <div id="searchDropdown" class="searchDropdown"></div>
+            </div>
+            <!-- Icons for Shopping Cart and Account -->
+            <div class="shoppingAccountActions">
+                <button><i class="iconoir-user-circle"></i></button>
+                <button><i class="iconoir-shopping-bag"></i></button>
+            </div>
+            <!-- Mobile Menu Toggle (hidden on desktop) -->
+            <button id="mobileMenuToggle" class="mobileMenuToggle"><i class="iconoir-menu"></i></button>
+        </div>
+        <!-- Mobile Navigation Menu -->
+        <nav id="mobileNav" class="mobileNav">
+            <ul class="mobileNavMenu">
+                <li><a href="staff_picks.html" class="mobileNavLink">Staff Picks</a></li>
+                <li><a href="book_Addie_LaRue_information.html" class="mobileNavLink">Addie LaRue</a></li>
+                <li><a href="#" class="mobileNavLink">Events</a></li>
+                <li><a href="#" class="mobileNavLink">Book Club</a></li>
+                <li><a href="#" class="mobileNavLink">Local Author Info</a></li>
+                <li><a href="accessibility.html" class="mobileNavLink">Accessibility</a></li>
+                <li><a href="faq.html" class="mobileNavLink">FAQ</a></li>
+                <li><a href="#" class="mobileNavLink">Ordering</a></li>
+                <li><a href="#" class="mobileNavLink">Shipping and Delivery</a></li>
+                <li><a href="#" class="mobileNavLink">Contact Us</a></li>
+                <li><a href="#" class="mobileNavLink">Merch</a></li>
+                <li><a href="#" class="mobileNavLink">Young Readers</a></li>
+            </ul>
+        </nav>
+        <!-- Navigation Bar -->
+        <nav class="navBar mobileHidden">
+            <ul class="navMenu">
+                <div class="dropdown">
+                    <li><a href="#" class="navLink ">Browse <i class="iconoir-arrow-down-tag"></i></a></li>
+                    <div class="dropdownContent">
+                        <a href="staff_picks.html">Staff Picks</a>
+                        <a href="#">Young Readers</a>
+                    </div>
+                </div>
+                <li><a href="#" class="navLink">Events</a></li>
+                <li><a href="#" class="navLink">Book Club</a></li>
+                <div class="dropdown">
+                    <li><a href="#" class="navLink">About <i class="iconoir-arrow-down-tag"></i></a></li>
+                    <div class="dropdownContent">
+                        <a href="#">Local Author Info</a>
+                        <a href="accessibility.html">Accessibility</a>
+                        <a href="faq.html">FAQ</a>
+                        <a href="#">Ordering</a>
+                        <a href="#">Shipping and Delivery</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+                <li><a href="#" class="navLink">Merch</a></li>
+                <!-- This is temporary for navigation-->
+                <li><a href="book_Addie_LaRue_information.html" class="navLink">Addie LaRue</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <!-- Column 1 - Book Cover -->
+                 <div class="column columnLg2 columnSm12">
+                    <img src="images/book_the-invisible-life-of-addie-larue.jpg" alt="The Invisible Life of Addie LaRue book cover" class="bookCoverImage"/>
+                 </div>
+
+                <!-- Mobile Toggle Buttons -->
+                <div class="column columnLg12 columnSm12 mobileBookInfoButtons">
+                    <button class="bookInfoButton active" data-target="bookDetails">Book Details</button>
+                    <button class="bookInfoButton" data-target="authorDetails">Author Info</button>
+                    <button class="bookInfoButton" data-target="orderInfo">Order</button>
+                </div>
+
+                <!-- Column 2 - Book Information -->
+                <div class="column columnLg7 columnSm12">
+                    <!-- Book Title Section -->
+                    <div class="backgroundBox" id="bookTitle">
+                        <h1>The Invisible Life of Addie LaRue</h1>
+                        <p class="authorName">V.E. Schwab</p>
+                        <p><strong>Publisher:</strong> Tor Publishing Group</p>
+                        <p><strong>Genres:</strong> Fiction / Fantasy - Historical / Literary / Multiple Timelines</p>
+                    </div>
+                    <!-- Book Details Section -->
+                    <div class="backgroundBox" id="bookDetails">
+                        <h2>Book Details</h2>
+                        <p>France, 1714: in a moment of desperation, a young woman makes a Faustian bargain to live
+                            forever—and is cursed to be forgotten by everyone she meets.</p>
+                        <p>Thus begins the extraordinary life of Addie LaRue, and a dazzling adventure that will play
+                            out across centuries and continents, across history and art, as a young woman learns how far
+                            she will go to leave her mark on the world.</p>
+                        <p>But everything changes when, after nearly 300 years, Addie stumbles across a young man in a
+                            hidden bookstore and he remembers her name.</p>
+                        <p><strong>NEW YORK TIMES BESTSELLER</strong> • <strong>USA TODAY BESTSELLER</strong> •
+                            <strong>NATIONAL INDIE BESTSELLER</strong> • <strong>THE WASHINGTON POST BESTSELLER</strong>
+                        </p>
+                        <p>In the vein of The Time Traveler's Wife and Life After Life, The Invisible Life of Addie
+                            LaRue is New York Times bestselling author V. E. Schwab's genre-defying tour de force.</p>
+                        <p>Recommended by Entertainment Weekly, Real Simple, NPR, Slate, and Oprah Magazine</p>
+                        <p>#1 Library Reads Pick—October 2020<br>
+                            #1 Indie Next Pick—October 2020<br>
+                            BOOK OF THE YEAR (2020) FINALIST—Book of The Month Club</p>
+                        <p><strong>A "Best Of" Book From:</strong> Oprah Mag * CNN * Amazon * Amazon Editors * NPR *
+                            Goodreads * Bustle * PopSugar * BuzzFeed * Barnes & Noble * Kirkus Reviews * Lambda Literary
+                            * Nerdette * The Nerd Daily * Polygon * Library Reads * io9 * Smart Bitches Trashy Books *
+                            LiteraryHub * Medium * BookBub * The Mary Sue * Chicago Tribune * NY Daily News * SyFy Wire
+                            * Powells.com * Bookish * Book Riot * Library Reads Voter Favorite</p>
+                        <p><em>A Life No One Will Remember. A Story You Will Never Forget.</em></p>
+                    </div>
+
+                    <!-- Author Details Section -->
+                    <div class="backgroundBox" id="authorDetails">
+                        <h2>Author Details</h2>
+                        <p>VICTORIA "V. E." SCHWAB is the #1 New York Times bestselling author of more than twenty
+                            books. Schwab's series and standalone titles for readers of all ages have made her a major
+                            literary figure, whose notable works include the Villains series, the Shades of Magic
+                            universe, The Invisible Life of Addie LaRue, and Bury Our Bones in the Midnight Soil. When
+                            not haunting Paris streets or writing in the corner of her favorite coffee shop, she lives
+                            in Edinburgh, Scotland.</p>
+                        <h3>Also by V. E. Schwab</h3>
+                        <h4>Shades of Magic</h4>
+                        <ul>
+                            <li>A Darker Shade of Magic</li>
+                            <li>A Gathering of Shadows</li>
+                            <li>A Conjuring of Light</li>
+                        </ul>
+                        <h4>Villains</h4>
+                        <ul>
+                            <li>Vicious</li>
+                            <li>Vengeful</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 3 - Purchase Section -->
+                <div class="column columnLg2 columnSm12">
+                    <div class="backgroundBox orderSection" id="orderInfo">
+                        <p><strong>$26.99</strong></p>
+                        <p class="stockStatus">5 in stock</p>
+
+                        <div class="quantitySelector">
+                            <button class="quantityButton" id="decreaseBtn">-</button>
+                            <input type="number" class="quantityInput" value="1" min="1" />
+                            <button class="quantityButton" id="increaseBtn">+</button>
+                        </div>
+
+                        <button class="addToCartButton">Add to Cart</button>
+
+                        <!-- TEMPORARY: Development function to clear cart -->
+                        <button class="clearCartButton" id="clearCartButton">Clear Cart (Dev)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+     <footer>
+        <div class="container">
+            <div class="row">
+               <!-- Column 1 - Bird Logo -->
+                <div class="column columnLg2 columnSm12">
+                    <div class="footerLogoContainer">
+                    <a href="index.html"><img src="images/magpie-logo-bird-only.png" alt="Magpie Books Logo" class="footerLogo"/> </a>
+                    </div>
+                </div>
+                <!-- End Column 1 -->
+
+                <!-- Column 2 - Find Us -->
+                <div class="column columnLg3 columnSm12">
+                    <p class="textWhite">Find us at:</p>
+                    <p class="textWhite footerText">Magpie Books<br>
+                        9553 76th Ave NW<br>
+                        Edmonton, AB<br>
+                        Canada T6C 0K1
+                    </p>
+                    <a href="#" class="mapHoursButton">Map & Hours<i class="iconoir-arrow-right"></i></a>
+                </div>
+                <!-- End Column 2 -->
+
+                <!-- Column 3 - Contact Us -->
+                <div class="column columnLg3 columnSm12">
+                    <p class="textWhite">Contact Us</p>
+                    <ul class="listNoBullets">
+                        <li><i class="iconoir-phone"></i><a href="tel:780-435-0538"
+                                class="textWhite externalNavLinks">780-435-0538
+                            </a></li>
+                        <li><i class="iconoir-mail"></i><a href="mailto:hello@magpiebooks.ca"
+                                class="textWhite externalNavLinks">hello@magpiebooks.ca</a></li>
+                    </ul>
+                </div>
+                <!-- End Column 3 -->
+
+                <!-- Column 4 - Social & Terms -->
+                <div class="column columnLg4 columnSm12">
+                    <p class="textWhite">Social</p>
+                    <div class="footerSocialIcons">
+                        <a href="#" aria-label="Bluesky" class="socialIcon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-bluesky" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.468 1.948C5.303 3.325 7.276 6.118 8 7.616c.725-1.498 2.698-4.29 4.532-5.668C13.855.955 16 .186 16 2.632c0 .489-.28 4.105-.444 4.692-.572 2.04-2.653 2.561-4.504 2.246 3.236.551 4.06 2.375 2.281 4.2-3.376 3.464-4.852-.87-5.23-1.98-.07-.204-.103-.3-.103-.218 0-.081-.033.014-.102.218-.379 1.11-1.855 5.444-5.231 1.98-1.778-1.825-.955-3.65 2.28-4.2-1.85.315-3.932-.205-4.503-2.246C.28 6.737 0 3.12 0 2.632 0 .186 2.145.955 3.468 1.948" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="socialIcon">
+                            <i class="iconoir-instagram"></i>
+                        </a>
+                    </div>
+                    <a href="#" class="externalNavLinks">Terms and Conditions</a>
+                </div>
+                <!-- End Column 4 -->
+            </div>
+            <!-- End of row -->
+        </div>
+        <!-- End of container -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/search.js"></script>
+    <script src="scripts/book-order.js"></script>
+    <script src="scripts/book-info-mobile.js"></script>
+    <script src="scripts/mobile-nav.js"></script>
+</body>
+</html>
