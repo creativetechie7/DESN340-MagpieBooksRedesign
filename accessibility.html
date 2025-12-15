@@ -51,7 +51,26 @@
                 <button><i class="iconoir-user-circle"></i></button>
                 <button><i class="iconoir-shopping-bag"></i></button>
             </div>
+            <!-- Mobile Menu Toggle (hidden on desktop) -->
+            <button id="mobileMenuToggle" class="mobileMenuToggle"><i class="iconoir-menu"></i></button>
         </div>
+        <!-- Mobile Navigation Menu -->
+        <nav id="mobileNav" class="mobileNav">
+            <ul class="mobileNavMenu">
+                <li><a href="staff_picks.html" class="mobileNavLink">Staff Picks</a></li>
+                <li><a href="book_Addie_LaRue_information.html" class="mobileNavLink">Addie LaRue</a></li>
+                <li><a href="#" class="mobileNavLink">Events</a></li>
+                <li><a href="#" class="mobileNavLink">Book Club</a></li>
+                <li><a href="#" class="mobileNavLink">Local Author Info</a></li>
+                <li><a href="accessibility.html" class="mobileNavLink">Accessibility</a></li>
+                <li><a href="faq.html" class="mobileNavLink">FAQ</a></li>
+                <li><a href="#" class="mobileNavLink">Ordering</a></li>
+                <li><a href="#" class="mobileNavLink">Shipping and Delivery</a></li>
+                <li><a href="#" class="mobileNavLink">Contact Us</a></li>
+                <li><a href="#" class="mobileNavLink">Merch</a></li>
+                <li><a href="#" class="mobileNavLink">Young Readers</a></li>
+            </ul>
+        </nav>
         <!-- Navigation Bar -->
         <nav class="navBar mobileHidden">
             <ul class="navMenu">
@@ -91,7 +110,7 @@
                 <div class="column columnLg12 columnSm12">
                     <h2><i class="iconoir-home"></i> In Store</h2>
                 </div>
-                <div class="column columnLg7 columnSm8">
+                <div class="column columnLg7 columnSm11">
                     <p>
                         Entrance to our store has a 3 inch lift from the sidewalk. Our door is 30 inches wide and not
                         automatic.<br> In the warmer months, the door is propped open. When the door is closed, our
@@ -128,7 +147,7 @@
                 <div class="column columnLg12 columnSm12">
                     <h2><i class="iconoir-bus-stop"></i> Bus Routes</h2>
                 </div>
-                <div class="column columnLg7 columnSm8">
+                <div class="column columnLg7 columnSm11">
                     <p>
                         Magpie Books is near bus stops 2344, 2132, and 2169. Bus routes 525 and 501 run at these stops.
                     </p>
@@ -138,7 +157,7 @@
                 <div class="column columnLg12 columnSm12">
                     <h2><i class="iconoir-parking"></i> Parking</h2>
                 </div>
-                <div class="column columnLg6 columnSm8">
+                <div class="column columnLg6 columnSm11">
                     <p>
                         There is street parking along 76th avenue that is free. There is also a parking lot on the
                         corner of 76 AVE and 96 ST.
@@ -150,7 +169,7 @@
                 <div class="column columnLg12 columnSm12">
                     <h2><i class="iconoir-birthday-cake"></i> Events</h2>
                 </div>
-                <div class="column columnLg6 columnSm8">
+                <div class="column columnLg6 columnSm11">
                     <p>
                         Depending on the event we are hosting, there may be a ticket price. Any paid event will have a
                         sliding scale ($0-$15+). This allows our events to remain accessible to anyone. We encourage
@@ -164,7 +183,7 @@
                 <div class="column columnLg12 columnSm12">
                     <h2><i class="iconoir-house-rooms"></i> Space Usage</h2>
                 </div>
-                <div class="column columnLg6 columnSm8">
+                <div class="column columnLg6 columnSm11">
                     <p>
                         Magpie would love to host community events, such as book readings, art builds, clothing drives,
                         workshops, protest sign-making, and so much more! Our space is small but mighty! Do you have an
@@ -184,7 +203,9 @@
             <div class="row">
                 <!-- Column 1 - Bird Logo -->
                 <div class="column columnLg2 columnSm12">
-                    <a href="index.html"><img src="images/magpie-logo-bird-only.png" alt="Magpie Books Logo" /> </a>
+                    <div class="footerLogoContainer">
+                    <a href="index.html"><img src="images/magpie-logo-bird-only.png" alt="Magpie Books Logo" class="footerLogo"/> </a>
+                    </div>
                 </div>
                 <!-- End Column 1 -->
 
@@ -205,10 +226,10 @@
                     <p class="textWhite">Contact Us</p>
                     <ul class="listNoBullets">
                         <li><i class="iconoir-phone"></i><a href="tel:780-435-0538"
-                                class="textWhite footerNavLinks">780-435-0538
+                                class="textWhite externalNavLinks">780-435-0538
                             </a></li>
                         <li><i class="iconoir-mail"></i><a href="mailto:hello@magpiebooks.ca"
-                                class="textWhite footerNavLinks">hello@magpiebooks.ca</a></li>
+                                class="textWhite externalNavLinks">hello@magpiebooks.ca</a></li>
                     </ul>
                 </div>
                 <!-- End Column 3 -->
@@ -228,7 +249,7 @@
                             <i class="iconoir-instagram"></i>
                         </a>
                     </div>
-                    <a href="terms_of_service.html" class="footerNavLinks">Terms and Conditions</a>
+                    <a href="#" class="externalNavLinks">Terms and Conditions</a>
                 </div>
                 <!-- End Column 4 -->
             </div>
@@ -239,5 +260,6 @@
 
     <!-- Scripts -->
     <script src="scripts/search.js"></script>
+    <script src="scripts/mobile-nav.js"></script>
     </body>
 </html>
