@@ -51,7 +51,26 @@
                 <button><i class="iconoir-user-circle"></i></button>
                 <button><i class="iconoir-shopping-bag"></i></button>
             </div>
+            <!-- Mobile Menu Toggle (hidden on desktop) -->
+            <button id="mobileMenuToggle" class="mobileMenuToggle"><i class="iconoir-menu"></i></button>
         </div>
+        <!-- Mobile Navigation Menu -->
+        <nav id="mobileNav" class="mobileNav">
+            <ul class="mobileNavMenu">
+                <li><a href="staff_picks.html" class="mobileNavLink">Staff Picks</a></li>
+                <li><a href="book_Addie_LaRue_information.html" class="mobileNavLink">Addie LaRue</a></li>
+                <li><a href="#" class="mobileNavLink">Events</a></li>
+                <li><a href="#" class="mobileNavLink">Book Club</a></li>
+                <li><a href="#" class="mobileNavLink">Local Author Info</a></li>
+                <li><a href="accessibility.html" class="mobileNavLink">Accessibility</a></li>
+                <li><a href="faq.html" class="mobileNavLink">FAQ</a></li>
+                <li><a href="#" class="mobileNavLink">Ordering</a></li>
+                <li><a href="#" class="mobileNavLink">Shipping and Delivery</a></li>
+                <li><a href="#" class="mobileNavLink">Contact Us</a></li>
+                <li><a href="#" class="mobileNavLink">Merch</a></li>
+                <li><a href="#" class="mobileNavLink">Young Readers</a></li>
+            </ul>
+        </nav>
         <!-- Navigation Bar -->
         <nav class="navBar mobileHidden">
             <ul class="navMenu">
@@ -341,9 +360,11 @@
     <footer>
         <div class="container">
             <div class="row">
-                <!-- Column 1 - Bird Logo -->
+               <!-- Column 1 - Bird Logo -->
                 <div class="column columnLg2 columnSm12">
-                    <a href="index.html"><img src="images/magpie-logo-bird-only.png" alt="Magpie Books Logo" /> </a>
+                    <div class="footerLogoContainer">
+                    <a href="index.html"><img src="images/magpie-logo-bird-only.png" alt="Magpie Books Logo" class="footerLogo"/> </a>
+                    </div>
                 </div>
                 <!-- End Column 1 -->
 
@@ -387,7 +408,7 @@
                             <i class="iconoir-instagram"></i>
                         </a>
                     </div>
-                    <a href="terms_of_service.html" class="externalNavLinks">Terms and Conditions</a>
+                    <a href="#" class="externalNavLinks">Terms and Conditions</a>
                 </div>
                 <!-- End Column 4 -->
             </div>
@@ -399,6 +420,7 @@
     <!-- Scripts -->
     <script src="scripts/search.js"></script>
     <script src="scripts/faq.js"></script>
+    <script src="scripts/mobile-nav.js"></script>
 </body>
 
 </html>
